@@ -1,29 +1,33 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const userRoute = require('./routes/user.route.js');
-const app = express()
-app.use(express.json());
-const PORT = process.env.PORT || 3000; 
+import express from 'express';
+import connectDB from './config/database.js'; // Adjust the path if needed
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import userRouter from './routes/user.route.js';
+
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+// Connect to MongoDB
+connectDB();
 
 app.use(express.json());
+//route
+app.use("/api/users", userRouter);
 
-//route for users
-app.use("/api/users", userRoute);
+console.log('Directory:', __dirname);
+dotenv.config({ path: __dirname + '/.env' });
 
 // Basic route
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.send('Hello, MongoDB Atlas!');
 });
 
-
-// Connect to Database and start application
-mongoose.connect('mongodb+srv://Backend-Team:arih3eFfQ1dFnzWv@backend.hxs8s.mongodb.net/Backend?retryWrites=true&w=majority&appName=Backend')
-  .then(() => {
-    console.log("Connected to database!");
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
-    })
-  })
-  .catch((error) => {
-    console.log("Connection Not Made", error);
-  });
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

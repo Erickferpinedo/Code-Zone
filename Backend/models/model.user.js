@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-//Temporary for demonstration please change
+// Temporary for demonstration, please change
 const UserSchema = mongoose.Schema(
     {           
         username: {
@@ -17,10 +17,12 @@ const UserSchema = mongoose.Schema(
         }
     },
     {
-        Timestamp: true,
+        timestamps: true, // Note: 'timestamps' should be in lowercase
     }
 );
+
 // Model creation for User
 const User = mongoose.model("User", UserSchema);
-// Exports to database
-module.exports = User;
+
+// Export to database
+export default User;
