@@ -1,5 +1,6 @@
 import {TemporaryPageNavigation} from "../Components/TemporaryPageNavigation"
 import {RctLtAtmpsMini} from "../Components/RctLtAtmpsMini";
+import "./Home.css"
 
 import {getAllLoggedLeetCodes} from "../RctLtAttmptsMOCKdata";
 
@@ -11,12 +12,13 @@ function Home() {
         <div className="Home">
             <TemporaryPageNavigation/>
             <p>this is the home page 🏠</p>
-            {
-                leetcodeData.map(miniltAtp =>{
-                    return(<RctLtAtmpsMini atmptData={miniltAtp}/>);
-                })
-            }
-
+            <section className={"layout"}>
+                {
+                    leetcodeData.map(miniltAtp =>{
+                        return(<RctLtAtmpsMini atmptData={miniltAtp}/>);
+                    })
+                }
+            </section>
         </div>
     );
 }
