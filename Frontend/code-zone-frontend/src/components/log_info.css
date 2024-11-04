@@ -1,0 +1,178 @@
+.log_info {
+    border: solid 1px #D1D5DB;
+    border-radius: 15px;
+    margin: 20px;
+    margin-top: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    background-color: #F9FAFB;
+    width: 240px;
+    
+  
+}
+
+.difficulty-section, .data-structure-alg, .last-attempt-section, .next-reminder-section {
+    margin-top: 10px;
+    margin-bottom: 35px; 
+    width: 100%;
+    text-align: center;
+}
+
+.difficulty-title, .data-structure-alg-title, .last-attempt-title, .next-reminder-title {
+    color: #5C93AD;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+/* FACEEEEEEE */
+.face-icons {
+    display: flex;
+    gap: 18px;
+    margin: 10px 0 15px;
+    justify-content: center; 
+    width: 100%; 
+}
+
+
+.face {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #CBD5E0;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.face:hover {
+    transform: scale(1.1);
+}
+
+
+.face::before,
+.face::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #1F2937;
+    border-radius: 50%;
+    top: 9px;
+}
+
+.face::before {
+    left: 9px;
+}
+
+.face::after {
+    right: 9px;
+}
+
+
+.smiley .face-mouth {
+    width: 12px;
+    height: 6px;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #1F2937;
+    border-color: transparent transparent #1F2937 transparent;
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.neutral .face-mouth {
+    width: 12px;
+    height: 2px;
+    background-color: #1F2937;
+    position: absolute;
+    top: 19px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sad .face-mouth {
+    width: 12px;
+    height: 6px;
+    border-radius: 10px 10px 0 0;
+    border: 2px solid #1F2937;
+    border-color: #1F2937 transparent transparent transparent;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* FACE Hover */
+.smiley:hover,
+.smiley-selected {
+    background-color: #81C784; /*  green for smiley face */
+}
+
+.neutral:hover,
+.neutral-selected {
+    background-color: #FFEB3B; /*  yellow for neutral face */
+}
+
+.sad:hover,
+.sad-selected {
+    background-color: #EF5350; /*  red for sad face */
+}
+
+.data-structure-drop-down {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dropdown-button {
+    padding: 10px 5px;
+    cursor: pointer;
+    border: 1px solid #D1D5DB;
+    background-color: #FFFFFF;
+    color: #374151;
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.dropdown-button:hover {
+    background-color: #F3F4F6;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    border-radius: 5px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 200px;
+}
+
+.dropdown-menu li {
+    padding: 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #374151;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.dropdown-menu li:hover {
+    background-color: #E5E7EB;
+}

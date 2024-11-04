@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Log_prob_page from './pages/Log_prob_page';
+import Sign_in_page from './pages/Sign_in_page';
+import Log_view_page from './pages/Log_view_page';
+import Sign_up_page from './pages/Sign_up_page.js';
+import Layout from './components/Layout'; 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                {/* Define the routes here! */}
+                <Route path="/" element={<Sign_in_page />} />
+                <Route path="/sign-up" element={<Sign_up_page />} />
+
+                {/* Wrap other routes inside the Layout component */}
+                <Route path="/*" element={<Layout />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
