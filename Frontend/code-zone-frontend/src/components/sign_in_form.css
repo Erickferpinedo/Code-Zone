@@ -1,0 +1,91 @@
+.sign_in_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sign_in_form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #D1D5DB;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.forgot-password a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.sign_in_button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #477DAC;
+    background-color: #FFFFFF;
+    border: 1px solid #477DAC;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.sign_in_button:hover {
+    background-color: #E5F1FF;
+    color: #477DAC;
+}
+
+
+.sign_up_button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #477DAC;
+    background-color: #FFFFFF;
+    border: 1px solid #477DAC;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+}
+
+.sign_up_button:hover {
+    background-color: #E5F1FF;
+    color: #477DAC;
+}
