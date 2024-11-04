@@ -2,7 +2,7 @@ import express from "express";
 import connectDB from "./config/database.js";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
-import authRoutes from './routes/auth.route.js'
+import authRoutes from './routes/auth.routes.js'
 import configurePassport from "./config/passport.js";
 import passport from "passport";
 import configureSession from "./config/session.js";
