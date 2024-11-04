@@ -1,0 +1,59 @@
+.sign_in_option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.sign_in_button {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px; 
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #477DAC;
+    background-color: #FFFFFF;
+    border: 1px solid #477DAC;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+.sign_in_button:hover {
+    background-color: #E5F1FF;
+    color: #477DAC;
+}
+
+.icon {
+    font-size: 20px;
+    color: #FFFFFF; /* White color for the icon itself */
+    background-color: #477DAC; /* Blue background for the circle */
+    border-radius: 50%; /* Makes the background a circle */
+    padding: 8px; /* Adjust padding to center the icon in the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sign_in_footer {
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.sign_in_footer a {
+    color: #477DAC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sign_in_footer a:hover {
+    text-decoration: underline;
+}
