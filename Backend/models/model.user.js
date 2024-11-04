@@ -1,28 +1,35 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-// Temporary for demonstration, please change
-const UserSchema = mongoose.Schema(
-    {           
-        username: {
-            type: String,
-            required: true
-        },
-        email: {
-            type: String,
-            required: true
-        },
-        password: {
-            type: String,
-            required: true
-        }
+const UserSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
     },
-    {
-        timestamps: true, // Note: 'timestamps' should be in lowercase
-    }
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    },
+    profileImage: {
+      type: String,
+    },
+    authProviders: {
+      // set to map to have it default for other  authentications google, github, Auth0
+      type: Map,
+      // specifies how map will be handled
+      of: new mongoose.Schema({
+        id: { type: String, unique: true, sparse: true },
+      }),
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-// Model creation for User
-const User = mongoose.model("User", UserSchema);
-
-// Export to database
-export default User;
+export default mongoose.model("User", UserSchema);

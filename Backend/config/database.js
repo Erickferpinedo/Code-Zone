@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
 // Load environment variables from .env
-dotenv.config(); 
+dotenv.config();
 
 // Get the MongoDB connection string from environment variables
 const dbConnectionString = process.env.DB_CONNECTION_STRING;
@@ -11,13 +11,11 @@ const dbConnectionString = process.env.DB_CONNECTION_STRING;
 const connectDB = async () => {
   try {
     await mongoose.connect(dbConnectionString, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      autoIndex: true,
     });
     console.log("Connected to MongoDB Atlas");
   } catch (err) {
     console.error("MongoDB connection error:", err);
-    process.exit(1); // Exit process if the connection fails
   }
 };
 
