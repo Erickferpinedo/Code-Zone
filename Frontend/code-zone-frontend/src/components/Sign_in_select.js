@@ -9,7 +9,7 @@ const Sign_in_select = () => {
   };
 
   const githubLogin = () => {
-    window.location.href = "http://localhost:5001/auth/google";
+    window.location.href = "http://localhost:5001/auth/github";
   };
 
   return (
