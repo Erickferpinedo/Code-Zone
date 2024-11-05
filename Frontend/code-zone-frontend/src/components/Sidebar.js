@@ -30,7 +30,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
     const handleLogout = () => {
         toggleSidebar(); 
-        navigate('/');
+        navigate('/logout');
     };
 
     const handleViewLogs = () => {
