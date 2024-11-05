@@ -20,7 +20,7 @@ router.get(
   "/auth/github/callback",
   passport.authenticate("github", { failureRedirect: "/" }),
   (req, res) => {
-    res.redirect("/loggedIn");
+    res.redirect("http://localhost:3000/log-prob");
   }
 );
 
@@ -30,7 +30,7 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
     // Successful authentication
-    res.redirect("/loggedIn"); // Or redirect to desired route
+    res.redirect("http://localhost:3000/log-prob"); // Or redirect to desired route
   }
 );
 
