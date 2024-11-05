@@ -13,7 +13,7 @@ function Home() {
         <div className="Home">
             <NavigationSideBar/>
             <div className={"allContainers"}>
-                <p>this is the home page 🏠</p>
+                <h1 className={"sectionHeadersHome"}>Recent LeetCode Attempts</h1>
                 <div className={"recentLeetcodeAttemptsSectionBox"}>
                     <br/>
                     <div className={"homelayout"}>
@@ -30,6 +30,38 @@ function Home() {
                         <br/>
                         <br/>
                         <br/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div className={"layoutForBottomHalfOfHome"}>
+                    <div className={"grow2Home homeStats"}>
+                        <div className={"layoutForStatsAndReminders"}>
+                            <div className={"headerForStatsAndReminders"}>
+                                <h1 className={"sectionHeadersHome"}>Statistics</h1>
+                            </div>
+                            <div className={"mainForStatsAndReminders"}>
+                                <p>main chunk</p>
+                                <p>stats here. create stats component</p>
+                            </div>
+                            <div className={"footerForStatsAndReminders"}>
+                                <p>footer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={"grow1Home homeReminders"}>
+                        <div className={"layoutForStatsAndReminders"}>
+                            <div className={"headerForStatsAndReminders"}>
+                                <h1 className={"sectionHeadersHome"}>Upcoming Reminders</h1>
+                            </div>
+                            <div className={"mainForStatsAndReminders"}>
+                                <p>main chunk</p>
+                                <p>reminders here. create reminders component</p>
+                            </div>
+                            <div className={"footerForStatsAndReminders"}>
+                                <p>footer</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

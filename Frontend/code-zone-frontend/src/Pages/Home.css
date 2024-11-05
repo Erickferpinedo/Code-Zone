@@ -1,20 +1,11 @@
 .homelayout {
     width: 100%;
-
-    /*display: flex;*/
     gap: 16px;
-    /*flex-wrap: wrap;*/
-
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: horizontal;
 }
 
-/*.HomeContainer{*/
-/*    margin-left: 21%;*/
-/*    padding: 1px 16px;*/
-/*    height: 1000px;*/
-/*}*/
 body {
     background-color: #F4F7FA;
 }
@@ -88,4 +79,51 @@ body {
 .seeAllLogsButton:active {
     position:relative;
     top:1px;
+}
+
+.sectionHeadersHome{
+    color: #477DAC;
+    font-size: 23px;
+    max-width: fit-content;
+    margin: 10px 0px 6px 0px;
+}
+
+.layoutForBottomHalfOfHome {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.grow1Home {
+    flex-grow: 1;
+}
+.grow2Home {
+    flex-grow: 2;
+}
+
+.layoutForStatsAndReminders {
+    width: 100%;
+
+
+    display: grid;
+    grid:
+    "header" auto
+    "main" 1fr
+    "footer" auto
+    / 1fr;
+}
+
+.headerForStatsAndReminders {
+    grid-area: header;
+
+}
+.mainForStatsAndReminders {
+    grid-area: main;
+    margin-left: 10px;
+    padding: 10px 6px 6px 10px;
+    background-color: #ECF2F7;
+    border-radius: 16px;
+}
+.footerForStatsAndReminders {
+    grid-area: footer;
 }
