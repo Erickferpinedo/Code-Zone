@@ -45,7 +45,7 @@ router.get("/logout", (req, res, next) => {
         console.error("Error destroying session: ", err);
       }
       res.clearCookie("connect.sid");
-      res.redirect("/");
+      res.redirect("http://localhost:3000");
     });
   });
 });
