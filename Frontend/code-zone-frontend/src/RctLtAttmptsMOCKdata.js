@@ -28,6 +28,13 @@ function getAllLoggedLeetCodes(){
             link: "https://leetcode.com/problems/candy/description/",
             completed: false,
         },
+        {
+            name: "Error?",
+            difficulty: 2,
+            comments: "This should not be visible if ur comp is small!",
+            link: "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content",
+            completed: false,
+        },
     ];
 
     return leetcodeData;

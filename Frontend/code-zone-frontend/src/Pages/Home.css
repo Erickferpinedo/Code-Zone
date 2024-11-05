@@ -1,7 +1,91 @@
-.layout {
+.homelayout {
     width: 100%;
 
+    /*display: flex;*/
+    gap: 16px;
+    /*flex-wrap: wrap;*/
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.HomeContainer{
+    margin-left: 21%;
+    padding: 1px 16px;
+    height: 1000px;
+}
+body {
+    background-color: #F4F7FA;
+}
+
+.recentLeetcodeAttemptsSectionBox{
+    width: 100%;
+    overflow: hidden;
     display: flex;
     gap: 16px;
-    flex-wrap: wrap;
+}
+
+.recentLeetcodeAttemptsSectionBox .buttonBox{
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    max-width: 230px;
+
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    overflow: auto;
+}
+
+.addNewLogButton {
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    place-content: center;
+    background-color:#477DAC;
+    border-radius:4px;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    padding:12px 15px;
+    text-decoration:none;
+}
+.addNewLogButton:hover {
+    background:linear-gradient(to bottom, #476e9e 5%, #255780 100%);
+    background-color:#476e9e;
+}
+.addNewLogButton:active {
+    position:relative;
+    top:1px;
+}
+
+.seeAllLogsButton {
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    place-content: center;
+    background-color:#7EB8CF;
+    border-radius:4px;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    padding:12px 15px;
+    text-decoration:none;
+}
+.seeAllLogsButton:hover {
+    background:linear-gradient(to bottom, #7EB8CF 5%, #488aa2 100%);
+    background-color:#7EB8CF;
+}
+.seeAllLogsButton:active {
+    position:relative;
+    top:1px;
 }

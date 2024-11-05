@@ -1,0 +1,60 @@
+nav{
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 21%;
+    background-color: #D3D3D3;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+nav li a {
+    display: block;
+    color: #818181;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+nav li a:hover {
+    background-color: #818181;
+    color: white;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.active {
+    background-color: #F4F7FA;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    color: #477DAC;
+}
+
+.navbarHeader {
+    width: 20%;
+    background-color: #D3D3D3;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 10px 4px 10px 10px;
+}
+
+.navbarHeader h3 {
+    font-size: 19px;
+    color: #0e4a80;
+}
+
+.auth-wrapper {
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+}

@@ -4,13 +4,13 @@
     max-height: 243px;
     width: 243px;
     height: 243px;
-    padding: 5px;
+    padding: 10px;
     overflow: auto;
     border-radius: 16px;
     position: relative;
 }
 
-.layout {
+.rctAttptmilayout {
     width: 100%;
     max-width: 243px;
     display: flex;
@@ -66,8 +66,12 @@ h3{
 p{
     margin-top: 5px;
     overflow: hidden;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
     text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 h2{
@@ -77,6 +81,9 @@ h2{
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .seeQuestionButton {
