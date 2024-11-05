@@ -1,9 +1,11 @@
-import {TemporaryPageNavigation} from "../Components/TemporaryPageNavigation"
+import {NavigationSideBar} from "../Components/NavigationSideBar";
 function Settings() {
     return (
         <div className="Settings">
-            <TemporaryPageNavigation/>
-            <p>this is the settings page ⚙️</p>
+            <NavigationSideBar/>
+            <div className={"allContainers"}>
+                <p>this is the settings page ⚙️</p>
+            </div>
         </div>
     );
 }

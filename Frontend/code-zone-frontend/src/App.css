@@ -5,3 +5,9 @@ Add css here for the app
 body {
     background-color: #F4F7FA;
 }
+
+.allContainers{
+    margin-left: 21%;
+    padding: 1px 16px;
+    height: 1000px;
+}

@@ -1,9 +1,11 @@
-import {TemporaryPageNavigation} from "../Components/TemporaryPageNavigation"
+import {NavigationSideBar} from "../Components/NavigationSideBar";
 function ViewLogs() {
     return (
         <div className="ViewLogs">
-            <TemporaryPageNavigation/>
-            <p>this is the view logs page 🔎</p>
+            <NavigationSideBar/>
+            <div className={"allContainers"}>
+                <p>this is the view logs page 🔎</p>
+            </div>
         </div>
     );
 }

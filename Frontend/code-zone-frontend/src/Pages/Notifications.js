@@ -1,9 +1,11 @@
-import {TemporaryPageNavigation} from "../Components/TemporaryPageNavigation"
+import {NavigationSideBar} from "../Components/NavigationSideBar";
 function Notifications() {
     return (
         <div className="Notifications">
-            <TemporaryPageNavigation/>
-            <p>this is the notifications page 🔔</p>
+            <NavigationSideBar/>
+            <div className={"allContainers"}>
+                <p>this is the notifications page 🔔</p>
+            </div>
         </div>
     );
 }

@@ -1,9 +1,11 @@
-import {TemporaryPageNavigation} from "../Components/TemporaryPageNavigation"
+import {NavigationSideBar} from "../Components/NavigationSideBar";
 function LogProblem() {
     return (
         <div className="LogProblem">
-            <TemporaryPageNavigation/>
-            <p>this is the log problems page 🪵</p>
+            <NavigationSideBar/>
+            <div className={"allContainers"}>
+                <p>this is the log problems page 🪵</p>
+            </div>
         </div>
     );
 }
