@@ -37,6 +37,10 @@ function Sidebar({ isOpen, toggleSidebar }) {
         toggleSidebar();
         navigate('/view-logs');
     };
+    const handleLogProb = () =>{
+        toggleSidebar();
+        navigate('log-prob')
+    };
 
     return (
         <div ref={sidebarRef} className={`sidebar ${isOpen ? 'open' : ''}`}>
@@ -45,7 +49,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
                 <li>
                     <HomeIcon /> <span>Home</span>
                 </li>
-                <li>
+                <li onClick={handleLogProb}>
                     <AddIcon /> <span>Log Problem</span>
                 </li>
                 <li onClick={handleViewLogs}>
