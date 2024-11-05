@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.routes.js'
 import configurePassport from "./config/passport.js";
 import passport from "passport";
 import configureSession from "./config/session.js";
+import cors from "cors";
 
 dotenv.config();
 
@@ -16,14 +17,20 @@ const PORT = process.env.PORT || 5001; // changed to port 5001 since 3000 was gi
 connectDB();
 
 app.use(express.json());
+app.use(cors());
 
 //start a session and have it be stored in mongodb
 configureSession(app);
+
+
 //uses our Authentication strategies
 configurePassport();
 
+
 //Intializes Passport for incoming requests, allowing authentication strategies to be applied.
 app.use(passport.initialize());
+
+
 //Middleware that will restore login state from a session.
 app.use(passport.session());
 

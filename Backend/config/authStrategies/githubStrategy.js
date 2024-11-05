@@ -7,7 +7,7 @@ export default function configureGithubStrategy(passport) {
       {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
-        callbackURL: "http://localhost:5001/auth/github/callback",
+        callbackURL: process.env.GITHUB_CALLBACK_URI,
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
