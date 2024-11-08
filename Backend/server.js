@@ -1,22 +1,52 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import mongoose from  'mongoose'
+import express from "express";
+import connectDB from "./config/database.js";
+import dotenv from "dotenv";
+import userRouter from "./routes/user.route.js";
+import authRoutes from './routes/auth.routes.js'
+import configurePassport from "./config/passport.js";
+import passport from "passport";
+import configureSession from "./config/session.js";
+import cors from "cors";
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5001; // changed to port 5001 since 3000 was giving me trouble
+
+// Connect to MongoDB
+connectDB();
+
+app.use(express.json());
+app.use(cors());
+
+//start a session and have it be stored in mongodb
+configureSession(app);
 
 
-const app = express(); 
-const PORT = process.env.PORT || 3000; 
+//uses our Authentication strategies
+configurePassport();
 
-dotenv.config(); // Load environment variables from .env file
 
-const dbConnectionString = process.env.DB_CONNECTION_STRING; // MongoDB connection string
+//Intializes Passport for incoming requests, allowing authentication strategies to be applied.
+app.use(passport.initialize());
 
-mongoose.connect(dbConnectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log("Connected to MongoDB"))
-.catch((err) => console.error("MongoDB connection error:", err));
 
+//Middleware that will restore login state from a session.
+app.use(passport.session());
+
+// Gives app routes 
+app.use("/user/", userRouter);
+app.use(authRoutes);
+
+// Basic route
+app.get("/", (req, res) => {
+  res.send("Hello, MongoDB Atlas!");
+});
+
+// login route
+app.get("/loggedIn", (req, res) => {
+  res.send("You're Currently logged in");
+});
 
 // Start the server
 app.listen(PORT, () => {
