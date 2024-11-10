@@ -21,4 +21,5 @@ export default function configurePassport() {
             done(err, null);
         }
     });
-}
+};
+

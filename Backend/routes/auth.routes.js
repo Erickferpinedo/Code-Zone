@@ -5,19 +5,19 @@ const router = express.Router();
 
 // Route to initiate Google authentication
 router.get(
-  "/auth/google",
+  "/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
 
 //route for github
 router.get(
-  "/auth/github",
+  "/github",
   passport.authenticate("github", { scope: ["user:email"] })
 );
 
 //destination after route success (callback)
 router.get(
-  "/auth/github/callback",
+  "/github/callback",
   passport.authenticate("github", { failureRedirect: "/" }),
   (req, res) => {
     res.redirect("http://localhost:3000/log-prob");
@@ -26,7 +26,7 @@ router.get(
 
 // Google callback route
 router.get(
-  "/auth/google/callback",
+  "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
     // Successful authentication

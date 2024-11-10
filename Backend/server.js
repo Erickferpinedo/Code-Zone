@@ -2,7 +2,7 @@ import express from "express";
 import connectDB from "./config/database.js";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
-import authRoutes from './routes/auth.routes.js'
+import authRoutes from "./routes/auth.routes.js";
 import configurePassport from "./config/passport.js";
 import passport from "passport";
 import configureSession from "./config/session.js";
@@ -22,21 +22,18 @@ app.use(cors());
 //start a session and have it be stored in mongodb
 configureSession(app);
 
-
 //uses our Authentication strategies
 configurePassport();
-
 
 //Intializes Passport for incoming requests, allowing authentication strategies to be applied.
 app.use(passport.initialize());
 
-
 //Middleware that will restore login state from a session.
 app.use(passport.session());
 
-// Gives app routes 
-app.use("/user/", userRouter);
-app.use(authRoutes);
+// Gives app routes
+app.use("/user", userRouter);
+app.use("/auth", authRoutes);
 
 // Basic route
 app.get("/", (req, res) => {
@@ -50,5 +47,5 @@ app.get("/loggedIn", (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Backend Server is running on http://localhost:${PORT}`);
 });

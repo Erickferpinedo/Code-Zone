@@ -16,4 +16,11 @@ export default function configureSession(app) {
             },
         })
     );
-}
+};
+
+export function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenitcated()) {
+        return next();
+    }
+    res.status(401).send('Unauthorized');
+};

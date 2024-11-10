@@ -1,12 +1,15 @@
 {
   "name": "code-zone",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "code-zone-frontend"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix frontend",
-    "inject": "concurrently \"cd backend && npm install\" \"cd frontend/code-zone-frontend && npm install\"",
-    "dev": "concurrently \"cd backend && npm run server \" \"cd frontend/code-zone-frontend && npm run start\""
+    "dev": "concurrently \"cd backend && npm run server \" \"cd code-zone-frontend && npm run start\""
   },
   "keywords": [],
   "author": "",
