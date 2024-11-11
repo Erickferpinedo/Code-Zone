@@ -18,6 +18,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "express-session": "^1.18.1",
+    "file-uri-to-path": "^2.0.0",
     "mongodb": "^6.10.0",
     "mongoose": "^8.7.1",
     "passport": "^0.7.0",
