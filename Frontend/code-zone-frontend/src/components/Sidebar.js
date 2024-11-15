@@ -34,9 +34,13 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
   const handleLogout = () => {
     toggleSidebar();
-    window.location.href = "http://localhost:5001/logout";
+    navigate("/");
    // navigate("/");
   };
+  const handleSettings = () => {
+    toggleSidebar();
+    navigate("/settings");
+  }
 
   const handleViewLogs = () => {
     toggleSidebar();
@@ -68,7 +72,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
         </li>
       </ul>
       <ul className="sidebar-footer">
-        <li>
+        <li onClick ={handleSettings}>
           <SettingsIcon /> <span>Settings</span>
         </li>
         <li onClick={handleLogout}>
