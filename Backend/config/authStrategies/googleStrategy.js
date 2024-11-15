@@ -8,8 +8,9 @@ export default function configureGoogleStrategy(passport) {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         callbackURL: process.env.GOOGLE_CALLBACK_URI,
+        passReqToCallback: true,
       },
-      async (accessToken, refreshToken, profile, done) => {
+      async (req, accessToken, refreshToken, profile, done) => {
         try {
           let email = null;
 
@@ -41,6 +42,10 @@ export default function configureGoogleStrategy(passport) {
               isEmailVerified: true,
             });
           }
+
+          // store user data in session
+          req.session.user = { id: user._id };
+
           // show that it was successfull with done function provided by passport
           return done(null, user);
         } catch (err) {

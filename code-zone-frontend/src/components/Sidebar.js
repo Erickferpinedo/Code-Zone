@@ -34,7 +34,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
   const handleLogout = () => {
     toggleSidebar();
-    window.location.href = "http://localhost:5001/logout";
+    window.location.href = "http://localhost:5001/auth/logout";
    // navigate("/");
   };
 
@@ -44,7 +44,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
   };
   const handleLogProb = () => {
     toggleSidebar();
-    navigate("log-prob");
+    navigate("/log-prob");
   };
 
   return (

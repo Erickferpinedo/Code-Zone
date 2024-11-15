@@ -28,11 +28,20 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
-  (req, res) => {
+    (req, res) => {
     // Successful authentication
     res.redirect("http://localhost:3000/log-prob"); // Or redirect to desired route
   }
 );
+
+// checks if the user is verified 
+router.get("/session", (req, res) => {
+  if (req.isAuthenticated()) {
+    res.status(200).json({authenticated: true, user: req.user});
+  } else {
+    res.status(401).json({authenticated: false});
+  }
+});
 
 //Log out logic
 router.get("/logout", (req, res, next) => {

@@ -8,8 +8,9 @@ export default function configureGithubStrategy(passport) {
         clientID: process.env.GITHUB_CLIENT_ID,
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
         callbackURL: process.env.GITHUB_CALLBACK_URI,
+        passReqToCallback: true,
       },
-      async (accessToken, refreshToken, profile, done) => {
+      async (req, accessToken, refreshToken, profile, done) => {
         try {
           // verify if the profile has an email shown by default
           let emails = [];
@@ -33,7 +34,6 @@ export default function configureGithubStrategy(passport) {
           }
 
           //From that Json file find the primary email that is verified otherwise throw error
-          // this is specifically needed for github because emails are now shown public by default
           let email;
           let primaryEmailObj = emails.find((e) => e.primary && e.verified);
 
@@ -62,6 +62,10 @@ export default function configureGithubStrategy(passport) {
               isEmailVerified: true,
             });
           }
+
+          // store user data in session
+          req.session.user = { id: user._id };
+
           //return success through passport function done
           return done(null, user);
         } catch (err) {

@@ -5,19 +5,24 @@ import userRouter from "./routes/user.route.js";
 import authRoutes from "./routes/auth.routes.js";
 import configurePassport from "./config/passport.js";
 import passport from "passport";
-import configureSession from "./config/session.js";
+import { configureSession } from "./config/session.js";
 import cors from "cors";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5001; // changed to port 5001 since 3000 was giving me trouble
+const PORT = process.env.PORT || 5001;
 
-// Connect to MongoDB
 connectDB();
 
 app.use(express.json());
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "http://localhost3000",
+    credential: true,
+  })
+);
 
 //start a session and have it be stored in mongodb
 configureSession(app);
@@ -31,19 +36,13 @@ app.use(passport.initialize());
 //Middleware that will restore login state from a session.
 app.use(passport.session());
 
-// Gives app routes
+// routes
 app.use("/user", userRouter);
 app.use("/auth", authRoutes);
 
-// Basic route
-app.get("/", (req, res) => {
-  res.send("Hello, MongoDB Atlas!");
-});
-
-// login route
-app.get("/loggedIn", (req, res) => {
-  res.send("You're Currently logged in");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello, MongoDB Atlas!");
+// });
 
 // Start the server
 app.listen(PORT, () => {
