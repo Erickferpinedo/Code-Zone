@@ -4,6 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Log_prob_page from '../pages/Log_prob_page';
 import Log_view_page from '../pages/Log_view_page';
+import Setting_page from '../pages/Setting_Page';
 
 function Layout() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -25,7 +26,7 @@ function Layout() {
             <Routes>
                 <Route path="/log-prob" element={<Log_prob_page />} />
                 <Route path="/view-logs" element={<Log_view_page />} />
-                {/* ADD HERE FOR PAGE TO HAVE HEADER*/}
+                <Route path="/settings" element={<Setting_page/>} />
             </Routes>
         </>
     );
