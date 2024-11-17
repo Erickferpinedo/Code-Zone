@@ -11,11 +11,25 @@ export const createUser = async (req, res) => {
 
 export const getUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    const user = await User.findById(id);
-    res.status(200).json(user);
+    if (!req.isAuthenticated()){
+      return res.status(401).json({message: 'Unauthorized'});
+    }
+
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({message: 'User not found'});
+    }
+
+    res.status(200).json({
+      username: user.username,
+      email: user.email,
+      profileImage: user.profileImage,
+    });
+
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error('Error fetching user data', error);
+    res.status(500).json({ message: 'Intername server error on User' });
   }
 };
 

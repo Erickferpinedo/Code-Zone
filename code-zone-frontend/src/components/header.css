@@ -36,3 +36,9 @@
     outline: none;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
+
+.userIcon{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}

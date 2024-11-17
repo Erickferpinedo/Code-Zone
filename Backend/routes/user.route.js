@@ -6,10 +6,10 @@ import { createUser, getUser, getUsers, updateUser, deleteUser } from '../contro
 router.post("/", createUser);
 
 // Get request from server for a specific user
-router.get("/:id", getUser);
+router.get("/", getUser);
 
 // Get request from server for all users
-router.get("/", getUsers);
+router.get("/all", getUsers);
 
 // Put request to update a specific user information
 router.put("/:id", updateUser);
