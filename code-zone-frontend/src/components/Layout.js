@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Log_prob_page from "../pages/Log_prob_page";
+import LOG_PROB_PAGE from "../pages/Log_prob_page";
 import Log_view_page from "../pages/Log_view_page";
 import Setting_page from "../pages/Setting_Page";
 import { getUserData } from "../apiServices/userService";
@@ -19,14 +19,14 @@ function Layout() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const data = await getUserData();
-        setUserIcon(data.profileImage);
+        const data = await getUserData(); // call the backend api
+        setUserIcon(data.profileImage);  // sets it for use state
       } catch (err) {
         console.error("Error fetching user data:", err);
       }
     };
 
-    fetchUserData();
+    fetchUserData();  // trigger the function
   }, []);
 
   // Define paths where the Header should be hidden
@@ -41,7 +41,7 @@ function Layout() {
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <Routes>
-        <Route path="/log-prob" element={<Log_prob_page />} />
+        <Route path="/log-prob" element={<LOG_PROB_PAGE />} />
         <Route path="/view-logs" element={<Log_view_page />} />
         <Route path="/settings" element={<Setting_page />} />
       </Routes>

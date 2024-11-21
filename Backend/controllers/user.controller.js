@@ -44,10 +44,16 @@ export const getUsers = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const { id } = req.params;
+    const id = req.user.id;
+ 
+    if (!req.body || Object.keys(req.body).length === 0){
+      return res.status(400).json({ message: 'No updates provided'})
+    }
     const updatedUser = await User.findByIdAndUpdate(id, req.body, {
       new: true,
+      runValidators: true,
     });
+
     if (!updatedUser) {
       return res.status(404).json({ message: "User Not Found" });
     }
@@ -59,8 +65,7 @@ export const updateUser = async (req, res) => {
 
 export const deleteUser = async (req, res) => {
   try {
-    const { id } = req.params;
-    const user = await User.findByIdAndDelete(id);
+    const user = await User.findByIdAndDelete(req.user.id);
     if (!user) {
       return res.status(404).json({ message: "User Not Found" });
     }
