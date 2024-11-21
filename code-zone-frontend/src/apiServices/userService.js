@@ -32,3 +32,13 @@ export const deleteUserData = async () => {
     throw error;
   }
 };
+
+export const createUser = async (user) => {
+  try {
+    const response = await api.post('/user', user);
+    console.log('User was create successfully', response.data)
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    throw error;
+  }
+};
