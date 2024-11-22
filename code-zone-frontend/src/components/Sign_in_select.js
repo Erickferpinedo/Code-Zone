@@ -1,7 +1,6 @@
 import "./sign_in_select.css";
 import { FaGoogle, FaGithub, FaEnvelope } from "react-icons/fa";
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 
 const Sign_in_select = () => {
   const googleLogin = () => {
