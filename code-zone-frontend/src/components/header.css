@@ -42,3 +42,15 @@
     width: 24px;
     border-radius: 50%;
 }
+
+.popover-content {
+    padding: 10px;
+    min-width: 250px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification {
+    margin-bottom: 10px;
+  }
+  

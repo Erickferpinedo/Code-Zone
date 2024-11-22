@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 import LOG_PROB_PAGE from "../pages/Log_prob_page";
 import Log_view_page from "../pages/Log_view_page";
 import Setting_page from "../pages/Setting_Page";
+import NotificationPage from "../pages/Notification_page";
 import { getUserData } from "../apiServices/userService";
 
 function Layout() {
@@ -44,6 +45,7 @@ function Layout() {
         <Route path="/log-prob" element={<LOG_PROB_PAGE />} />
         <Route path="/view-logs" element={<Log_view_page />} />
         <Route path="/settings" element={<Setting_page />} />
+        <Route path="/notifications" element={<NotificationPage />} />
       </Routes>
     </>
   );

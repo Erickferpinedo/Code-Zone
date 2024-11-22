@@ -7,6 +7,8 @@ import Log_view_page from './pages/Log_view_page';
 import Sign_up_page from './pages/Sign_up_page.js';
 import Layout from './components/Layout'; 
 import Setting_page from './pages/Setting_Page.js';
+import Notification_page from './pages/Notification_page.js'
+ 
 function App() {
     return (
         <Router>
