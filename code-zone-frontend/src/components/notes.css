@@ -11,7 +11,7 @@
   align-items: center;
   font-family: Arial, sans-serif;
   max-width: 300px; 
-  height: 488px;
+  height: 516px;
 }
 
 .notes-header {
@@ -36,7 +36,7 @@
 
 .notes-content {
   width: 100%;
-  padding: 20px;
+  padding: 0px;
   box-sizing: border-box; 
 }
 
@@ -50,7 +50,7 @@
 .notes-lines {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0px;
 }
 
 .notes-line {
@@ -58,4 +58,11 @@
   height: 1px;
   background-color: #e0e0e0;
   margin: 12px 0;
+}
+
+[contenteditable="true"] {
+  outline: none; 
+  padding: 5px; 
+  min-height: 20px;
+  border: none; 
 }

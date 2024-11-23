@@ -176,3 +176,12 @@
 .dropdown-menu li:hover {
     background-color: #E5E7EB;
 }
+
+.date-picker {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+  }
