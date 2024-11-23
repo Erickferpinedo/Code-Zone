@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sign_in_page from './pages/Sign_in_page';
 import Sign_up_page from './pages/Sign_up_page.js';
 import Layout from './components/Layout'; 
+import Notification_page from './pages/Notification_page.js'
+ 
 function App() {
     return (
         <Router>
