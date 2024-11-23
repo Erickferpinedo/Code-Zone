@@ -1,7 +1,6 @@
 // Log_view_page.js
 import React from 'react';
 import ProblemList from '../components/ProblemList';
-import Header from '../components/Header';
 
 function Log_view_page() {
     const problems = [

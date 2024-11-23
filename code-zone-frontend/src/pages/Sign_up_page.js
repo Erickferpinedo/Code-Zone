@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './sign_up_page.css';

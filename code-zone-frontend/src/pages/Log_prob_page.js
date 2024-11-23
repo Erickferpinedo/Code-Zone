@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 // Log_prob_page.js
 import React from 'react';
 import Notes from '../components/Notes';
