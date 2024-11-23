@@ -3,6 +3,7 @@ import connectDB from "./config/database.js";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
 import authRoutes from "./routes/auth.routes.js";
+import attemptRouter from "./routes/attempt.routes.js";
 import configurePassport from "./config/passport.js";
 import passport from "passport";
 import { configureSession } from "./config/session.js";
@@ -20,7 +21,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "http://localhost:3000",
-    credentials: true,
+    credential: true,
   })
 );
 
@@ -37,6 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // routes
+app.use("/attempt", attemptRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRoutes);
 

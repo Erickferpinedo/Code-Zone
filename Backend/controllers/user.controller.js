@@ -14,8 +14,8 @@ export const getUser = async (req, res) => {
     if (!req.isAuthenticated()){
       return res.status(401).json({message: 'Unauthorized'});
     }
-
-    const user = await User.findById(req.user.id);
+    const { id } = req.user;
+    const user = await User.findById(id);
 
     if (!user) {
       return res.status(404).json({message: 'User not found'});
