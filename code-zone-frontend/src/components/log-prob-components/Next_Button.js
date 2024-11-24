@@ -56,6 +56,7 @@ const Next_Button = ({
       console.log("Attempt saved:", response);
       alert("Attempt saved successfully!");
 
+      //clear fields
       setSelectedFace(null);
       setSelectedQuestionType("Select Type");
       setLastAttemptDate(null);
