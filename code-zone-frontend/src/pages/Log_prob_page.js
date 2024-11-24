@@ -44,6 +44,13 @@ function Log_prob_page() {
                     selectedQuestionType={selectedQuestionType}
                     lastAttemptDate={lastAttemptDate}
                     nextReminderDate={nextReminderDate}
+                    setSelectedFace={setSelectedFace}
+                    setSelectedQuestionType={setSelectedQuestionType}
+                    setNextReminderDate={setNextReminderDate}
+                    setLastAttemptDate={setLastAttemptDate}
+                    setQuestionDescription={setQuestionDescription}
+                    setQuestionName={setQuestionName}
+                    
                 />
             </div>
         </>

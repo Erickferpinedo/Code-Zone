@@ -10,6 +10,12 @@ const Next_Button = ({
   nextReminderDate,
   inputQuestionName,
   inputQuestionDescription,
+  setSelectedFace,
+  setSelectedQuestionType,
+  setNextReminderDate,
+  setLastAttemptDate,
+  setQuestionDescription,
+  setQuestionName,
 }) => {
   const handleSubmit = async () => {
     try {
@@ -49,6 +55,13 @@ const Next_Button = ({
       //testing
       console.log("Attempt saved:", response);
       alert("Attempt saved successfully!");
+
+      setSelectedFace(null);
+      setSelectedQuestionType("Select Type");
+      setLastAttemptDate(null);
+      setNextReminderDate(null);
+      setQuestionDescription("");
+      setQuestionName("");
     } catch (error) {
       // differentiate the errors for debugging
       if (error.response) {
