@@ -3,10 +3,16 @@ import Attempts from '../models/model.attempt.js';
 
 export const createAttempt = async (req, res) => {
     try {
-        const attempt = await Attempts.create(req.body);
+        const attemptData = {
+            ...req.body,
+            userId: req.user._id,
+        };
+
+        const attempt = await Attempts.create(attemptData);
         res.status(200).json(attempt);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        console.error("Error creating attempt:", error);
+        res.status(500).json({  message: error.message });
     }
 };
 

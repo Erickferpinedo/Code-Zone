@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Notification from '../components/Notification'; // Adjust path as needed
-import RetryReminder from '../components/RetryReminder';
+import Notification from '../components/notification-components/Notification'; // Adjust path as needed
+import RetryReminder from '../components/notification-components/RetryReminder';
 import './notification_page.css';
 
 const NotificationPage = () => {    

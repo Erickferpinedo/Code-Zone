@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar-components/Sidebar";
 import LOG_PROB_PAGE from "../pages/Log_prob_page";
 import Log_view_page from "../pages/Log_view_page";
 import Setting_page from "../pages/Setting_Page";

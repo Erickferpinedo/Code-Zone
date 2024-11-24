@@ -13,9 +13,19 @@ export function configureSession(app) {
       }),
       cookie: {
         maxAge: 24 * 60 * 60 * 1000,
-        sameSite: "lax",
+        secure: false,
+        httpOnly: true,
       },
     })
   );
 }
+
+// This will check if the user is authenticated
+export const isAuthenticated = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.status(401).json({message: "Unauthorized"});
+  }
+};
 

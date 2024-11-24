@@ -35,7 +35,6 @@ function Sidebar({ isOpen, toggleSidebar }) {
   const handleLogout = () => {
     toggleSidebar();
     window.location.href = "http://localhost:5001/auth/logout";
-   // navigate("/");
   };
   const handleSettings = () => {
     toggleSidebar();

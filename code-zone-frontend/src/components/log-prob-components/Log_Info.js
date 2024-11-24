@@ -1,16 +1,20 @@
+// Log_Info.js
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
 import "./log_info.css";
 
-const Log_info = () => {
-  const [selectedFace, setSelectedFace] = useState(null);
+const Log_Info = ({
+  selectedFace,
+  setSelectedFace,
+  selectedQuestionType,
+  setSelectedQuestionType,
+  lastAttemptDate,
+  setLastAttemptDate,
+  nextReminderDate,
+  setNextReminderDate,
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedQuestionType, setSelectedQuestionType] =
-    useState("Select Type");
-  const [lastAttemptDate, setLastAttemptDate] = useState(null);
-  const [nextReminderDate, setNextReminderDate] = useState(null);
 
   const handleSelectFace = (face) => {
     setSelectedFace(face);
@@ -33,6 +37,7 @@ const Log_info = () => {
       <div className="difficulty-section">
         <div className="difficulty-title">Difficulty</div>
         <div className="face-icons">
+          {/* Smiley Face */}
           <div
             className={`face smiley ${
               selectedFace === "smile" ? "selected smiley-selected" : ""
@@ -41,6 +46,7 @@ const Log_info = () => {
           >
             <div className="face-mouth"></div>
           </div>
+          {/* Neutral Face */}
           <div
             className={`face neutral ${
               selectedFace === "neutral" ? "selected neutral-selected" : ""
@@ -49,6 +55,7 @@ const Log_info = () => {
           >
             <div className="face-mouth"></div>
           </div>
+          {/* Sad Face */}
           <div
             className={`face sad ${
               selectedFace === "sad" ? "selected sad-selected" : ""
@@ -110,4 +117,4 @@ const Log_info = () => {
   );
 };
 
-export default Log_info;
+export default Log_Info;

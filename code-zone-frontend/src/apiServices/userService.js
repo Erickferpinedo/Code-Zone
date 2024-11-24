@@ -33,7 +33,7 @@ export const deleteUserData = async () => {
   }
 };
 
-export const createUser = async (user) => {
+export const createUser = async (user) => { // param is the user data in json
   try {
     const response = await api.post('/user', user);
     console.log('User was create successfully', response.data)

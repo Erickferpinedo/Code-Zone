@@ -1,7 +1,7 @@
 import express from "express";
 import connectDB from "./config/database.js";
 import dotenv from "dotenv";
-import userRouter from "./routes/user.route.js";
+import userRouter from "./routes/user.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import attemptRouter from "./routes/attempt.routes.js";
 import configurePassport from "./config/passport.js";
@@ -12,7 +12,7 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = 5001;
 
 connectDB();
 
@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "http://localhost:3000",
-    credential: true,
+    credentials: true,
   })
 );
 
@@ -42,9 +42,9 @@ app.use("/attempt", attemptRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRoutes);
 
-// app.get("/", (req, res) => {
-//   res.send("Hello, MongoDB Atlas!");
-// });
+app.get("/", (req, res) => {
+  res.send("If you can see this the backend is running, this is the root page.");
+});
 
 // Start the server
 app.listen(PORT, () => {

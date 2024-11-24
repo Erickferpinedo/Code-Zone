@@ -8,8 +8,16 @@ const AttemptsSchema = new mongoose.Schema(
             required: true,
         },
 
+        questionName: {
+            type: String,
+            required: true,
+        },
 
-        problemId: {
+        questionDescription: {
+            type: String,
+        },
+
+        questionType: {
             type: String, // identifier for problem
             required: true
         },
@@ -19,40 +27,28 @@ const AttemptsSchema = new mongoose.Schema(
             type: Number,
             default: 1 // track how many attempts made | set at 1 when attempt is created
         },
-          
-          
-        completed: {
-            type: Boolean,
-            default: false // completed true or false | completed or incomplete
-        },
-          
-        
-        reminderCount: {
-            type: Number,
-            default: 0 // track how many reminders have been sent
-        },
 
         difficulty: {
             type: String,
             enum: ['easy','medium','hard'],
             required: true,
-            default: 'pending'
 
         },
 
-        reminderNote: {
+        note: {
             type: String, // note from user
             default: ''
         },
 
         lastAttempt: {
             type: Date,
+            required: true,
+        },
+
+        nextReminder: {
+            type: Date,
         },
     },
-
-    {
-        timestamps: true, // Note: 'timestamps' should be in lowercase
-    }
 
 );
 
