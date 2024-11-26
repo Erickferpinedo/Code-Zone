@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import Log_prob_page from '../pages/Log_prob_page';
 import Log_view_page from '../pages/Log_view_page';
 import Setting_page from '../pages/Setting_Page';
-
+//IF YOU WANT THE HEADER ON YOU PAGE IMPORT IT AND ADD IT TO THE ROUTES 
 function Layout() {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
     const location = useLocation();
@@ -14,7 +14,7 @@ function Layout() {
         setSidebarOpen(!isSidebarOpen);
     };
 
-    // Define paths where the Header should be hidden
+  
     const hideHeaderPaths = ['/', '/sign-up'];
     const shouldShowHeader = !hideHeaderPaths.includes(location.pathname);
 
@@ -29,6 +29,7 @@ function Layout() {
                 <Route path="/settings" element={<Setting_page/>} />
             </Routes>
         </>
+        //PAGES THAT NEED THE HEADER SHOULD BE ADDED HERE 
     );
 }
 

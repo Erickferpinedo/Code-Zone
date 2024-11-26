@@ -1,4 +1,7 @@
 // Sidebar.js
+//HERE IS WHERE YOU ADD THE REDIRECT FOR THE SIDE BAR!!!! 
+//YOU CAN JUST COPY THE REDIRECT CODE AND CHANGE IT TO YOUR PAGE IN APP.JS!!
+
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
