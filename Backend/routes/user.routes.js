@@ -1,6 +1,12 @@
 import express from "express";
 const router = express.Router();
-import { createUser, getUser, getUsers, updateUser, deleteUser } from '../controllers/user.controller.js';
+import {
+  createUser,
+  getUser,
+  getUsers,
+  updateUser,
+  deleteUser,
+} from "../controllers/user.controller.js";
 
 // Post request to create a user
 router.post("/", createUser);
@@ -16,9 +22,6 @@ router.put("/:id", updateUser);
 
 // Delete request to delete a specific user
 router.delete("/", deleteUser);
-
-  
-
 
 // Export the router as default
 export default router;
