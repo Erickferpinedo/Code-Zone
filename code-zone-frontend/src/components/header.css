@@ -1,0 +1,56 @@
+/* Header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background-color: #477DAC; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+/* Buttons style*/
+.header .MuiIconButton-root {
+    color: #ffffff;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.header .MuiIconButton-root:hover {
+    color: #a0c4ff; 
+    transform: scale(1.1); 
+}
+
+.menu-icon, .icon {
+    color: #ffffff;
+}
+
+.header .MuiIconButton-root svg {
+    font-size: 1.5rem; 
+}
+
+.header .MuiIconButton-root:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.userIcon{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}
+
+.popover-content {
+    padding: 10px;
+    min-width: 250px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notification {
+    margin-bottom: 10px;
+  }
+  

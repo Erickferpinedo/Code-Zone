@@ -1,0 +1,42 @@
+.button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 100px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.next_button, .delete_button {
+    width: 140px;
+    height: 45px;
+    border-radius: 8px;
+    border: solid 1px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    
+}
+
+/* Save Button Styles */
+.next_button {
+    background-color: #477DAC;
+    border-color: #477DAC;
+}
+
+.next_button:hover {
+    background-color: #A9A9A9;
+    border-color: #A9A9A9;
+}
+
+/* Delete Button Styles */
+.delete_button {
+    background-color: #D9534F;
+    border-color: #D9534F;
+}
+
+.delete_button:hover {
+    background-color: #A94442;
+    border-color: #A94442;
+}

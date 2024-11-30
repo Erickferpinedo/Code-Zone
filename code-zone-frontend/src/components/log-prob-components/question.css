@@ -1,0 +1,64 @@
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 12px 16px;     
+    width: 80%;
+    max-width: 700px;
+    background-color: #f9f9f9; 
+    border: 1px solid #477DAC; 
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.question_title {
+    font-size: 1.5rem; 
+    font-weight: bold;
+    color: #7EB8CF;
+    margin-bottom: 16px; 
+    text-align: center;
+}
+
+.question_description {
+    font-size: 0.9rem; 
+    line-height: 1.5; 
+    text-align: center;
+    color: #555;
+    padding: 8px 23px 8px 8px; 
+    width: 100%;
+}
+
+/* Style the placeholder text */
+.question_title input::placeholder {
+    color: #5c93ad;  
+    opacity: 1; 
+    text-align: center;
+  }
+  
+  /* Style the input text */
+  .question_title input {
+    font-size: 1.5rem; 
+    color: #7EB8CF;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc; 
+    text-align: center;
+  }
+  
+  /* Style the underline (standard variant only) */
+  .question_title .MuiInput-underline:before {
+    border-bottom: 2px solid #477DAC; /* Default underline color */
+  }
+  
+  .question_title .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 2px solid #007bff; /* Underline color on hover */
+  }
+  
+  .question_title .MuiInput-underline:after {
+    border-bottom: 2px solid #477DAC; /* Underline color when focused */
+  }
+  
+

@@ -1,0 +1,35 @@
+.App {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  min-height: 100vh;       /* Full viewport height */
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.content > * {
+  flex: 1;
+}
+
+.Question {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Log_Info, .Notes {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.Next_Button {
+  margin-top: 20px;
+}

@@ -1,0 +1,46 @@
+.notification {
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; 
+}
+
+.notification-title {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+.notification-body {
+  display: flex; 
+  align-items: center; 
+  margin-top: 10px; 
+}
+
+.notification-message {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  flex-grow: 1; 
+}
+
+.clear-button {
+  size: 10px;
+  padding: 5px;
+  background-color: transparent; 
+  border: none;
+  color: #489bcc57; 
+  cursor: pointer;
+  font-size: 20px; 
+}
+
+.clear-button:hover {
+  color: #489cccaf; 
+  transition: 0.5s;
+}
+
