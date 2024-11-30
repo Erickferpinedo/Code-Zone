@@ -19,7 +19,7 @@ export const createAttempt = async (attempt) => {
 // return an object of the question {}
 export const getAttempt = async (questionName) => {
   try {
-    const response = await api.get(`/attempt/:${questionName}`);
+    const response = await api.get(`/attempt/${questionName}`);
     console.log("Attempt recived:", response.data);
     return await response.data;
   } catch (error) {
@@ -47,7 +47,7 @@ export const getAttempts = async () => {
 // this deletes a question and takes the question name as parameter
 export const deleteAttempt = async (questionName) => {
   try {
-    const response = await api.delete(`/attempt/:${questionName}`);
+    const response = await api.delete(`/attempt/${questionName}`);
     console.log("The attempt was deleted:", response.data);
     return await response.data;
   } catch (error) {

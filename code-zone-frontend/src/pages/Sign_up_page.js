@@ -15,9 +15,6 @@ function Sign_up_page() {
         <button onClick={() => navigate("/")} className="nav-button">
           Back to Sign In
         </button>
-        <button onClick={() => navigate("/log-prob")} className="nav-button">
-          Go to Log Problem
-        </button>
       </div>
     </div>
   );
