@@ -10,7 +10,6 @@ const AttemptsSchema = new mongoose.Schema({
   questionName: {
     type: String,
     required: true,
-    unique: true,
   },
 
   questionDescription: {

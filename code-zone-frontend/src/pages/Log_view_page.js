@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProblemList from "../components/ProblemList/problemList.js"; // ProblemList component
+import ProblemList from "../components/ProblemList-components/problemList.js"; // ProblemList component
 import { getAttempts, deleteAttempt } from "../apiServices/attemptService.js"; // API functions
 
 function Log_view_page() {

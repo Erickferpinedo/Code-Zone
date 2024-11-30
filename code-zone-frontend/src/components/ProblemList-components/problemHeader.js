@@ -1,6 +1,6 @@
 import React from "react";
 import { TableHead, TableRow, TableCell } from "@mui/material";
-import "./problemList.css"; // Import CSS
+import "./problem-List.css"; // Import CSS
 
 const ProblemHeader = () => {
   return (

@@ -1,0 +1,22 @@
+/* Table Header Styling */
+.MuiTableCell-root.table-header {
+    color: #5c93ad;
+    font-weight: bold;
+  }
+
+/* Star Icon Cell */
+.star-cell {
+  width: 50px;
+  text-align: center;
+}
+
+/* Menu Item Styling */
+ .MuiMenuItem-root.menu-item {
+  color: #5c93ad;
+  font-size: 14px;
+}
+
+/* Hover effect for menu items */
+.MuiMenuItem-root.menu-item:hover {
+  background-color: rgba(92, 147, 173, 0.1); /* Slight background tint on hover */
+}

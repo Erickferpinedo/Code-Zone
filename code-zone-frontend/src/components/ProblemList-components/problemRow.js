@@ -5,7 +5,7 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { truncateText } from "./helpers";
-import "./problemList.css"; // Import CSS
+import "./problem-List.css"; // Import CSS
 
 const ProblemRow = ({ problem, toggleStar, onDelete }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -23,8 +23,8 @@ const ProblemRow = ({ problem, toggleStar, onDelete }) => {
     handleMenuClose();
   };
 
-  const handleEditProblem = () => {
-    console.log("Edit Problem clicked for:", problem);
+  const handleViewProblem = () => {
+    console.log("View Problem clicked for:", problem);
     handleMenuClose();
   };
 
@@ -63,8 +63,8 @@ const ProblemRow = ({ problem, toggleStar, onDelete }) => {
           open={Boolean(anchorEl)}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleEditProblem} className="menu-item">
-            Edit Problem
+          <MenuItem onClick={handleViewProblem} className="menu-item">
+            View Problem
           </MenuItem>
           <MenuItem onClick={handleAddReminder} className="menu-item">
             Add Reminder
