@@ -3,7 +3,7 @@ import { CiFaceFrown, CiFaceMeh, CiFaceSmile } from "react-icons/ci";
 
 function RctLtAtmpsMini({ atmptData }) {
   if (!atmptData) {
-    return <div>You currently have no saved problems.</div>; // Fallback for missing data
+    return <div className="noProblems"><h2>You currently have no saved problems.</h2></div>; // Fallback for missing data
   }
 
   const faceMap = new Map([

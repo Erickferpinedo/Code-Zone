@@ -21,7 +21,7 @@ const SignInForm = () => {
 
     console.log("Email/Username:", emailOrUsername);
     console.log("Password:", password);
-    navigate("/log-prob");
+    navigate("/home");
   };
 
   const handleSignUpClick = () => {
