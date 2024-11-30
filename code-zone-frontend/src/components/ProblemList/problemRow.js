@@ -5,7 +5,7 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { truncateText } from "./helpers";
-import "./ProblemList.css"; // Import CSS
+import "./problemList.css"; // Import CSS
 
 const ProblemRow = ({ problem, toggleStar, onDelete }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
