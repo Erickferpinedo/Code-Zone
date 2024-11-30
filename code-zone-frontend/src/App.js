@@ -2,12 +2,11 @@
 // App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sign_in_page from "./pages/Sign_in_page";
+import Sign_in_page from "./pages/Sign_in_page.js";
 import Sign_up_page from "./pages/Sign_up_page.js";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout.js";
 
 function App() {
- 
   return (
     <Router>
       <Routes>

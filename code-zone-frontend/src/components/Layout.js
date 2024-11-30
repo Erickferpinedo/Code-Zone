@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
-import Sidebar from "./sidebar-components/Sidebar";
-import LOG_PROB_PAGE from "../pages/Log_prob_page";
-import Log_view_page from "../pages/Log_view_page";
-import Setting_page from "../pages/Setting_Page";
-import NotificationPage from "../pages/Notification_page";
-import { getUserData } from "../apiServices/userService";
+import Sidebar from "./sidebar-components/Sidebar.js";
+import LOG_PROB_PAGE from "../pages/Log_prob_page.js";
+import Log_view_page from "../pages/Log_view_page.js";
+import Setting_page from "../pages/Setting_Page.js";
+import { Home } from "../pages/Home.js";
+import NotificationPage from "../pages/Notification_page.js";
+import { getUserData } from "../apiServices/userService.js";
 
 function Layout() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -22,13 +23,13 @@ function Layout() {
     const fetchUserData = async () => {
       try {
         const data = await getUserData(); // call the backend api
-        setUserIcon(data.profileImage);  // sets it for use state
+        setUserIcon(data.profileImage); // sets it for use state
       } catch (err) {
         console.error("Error fetching user data:", err);
       }
     };
 
-    fetchUserData();  // trigger the function
+    fetchUserData(); // trigger the function
   }, []);
 
   // Define paths where the Header should be hidden
@@ -43,6 +44,7 @@ function Layout() {
       <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <Routes>
+        <Route path="/home" element={<Home />} />
         <Route path="/log-prob" element={<LOG_PROB_PAGE />} />
         <Route path="/view-logs" element={<Log_view_page />} />
         <Route path="/settings" element={<Setting_page />} />

@@ -35,12 +35,13 @@ export const getAttempts = async () => {
   try {
     const response = await api.get("/attempt/all");
     console.log("All attempts received:", response.data);
-    return await response.data;
+    return await response.data.reverse();
   } catch (error) {
     console.error(
       "There was an error getting all attempts for this user before database:",
       error
     );
+    return [];
   }
 };
 

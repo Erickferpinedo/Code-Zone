@@ -75,12 +75,23 @@ const Next_Button = ({
     }
   };
 
+  const handleCancel = () => {
+    setSelectedFace(null);
+    setSelectedQuestionType("Select Type");
+    setLastAttemptDate(null);
+    setNextReminderDate(null);
+    setQuestionDescription("");
+    setQuestionName("");
+  };
+
   return (
     <div className="button-container">
       <button onClick={handleSubmit} className="next_button">
         Save
       </button>
-      <button className="delete_button">Delete</button>
+      <button onClick={handleCancel} className="delete_button">
+        Cancel
+      </button>
     </div>
   );
 };
