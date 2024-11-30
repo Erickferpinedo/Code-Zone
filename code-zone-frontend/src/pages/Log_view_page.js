@@ -19,7 +19,7 @@ function Log_view_page() {
         setAttempts(validAttempts); // Set only valid attempts in state
       } catch (err) {
         console.error("Error fetching attempts:", err);
-        setError("Failed to load attempts. Please try again later.");
+        setError("Failed to load attempts 🤔. You must not be signed ⁉️.");
       } finally {
         setLoading(false); // Stop loading
       }

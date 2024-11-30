@@ -1,39 +1,59 @@
-import {RctLtAtmpsMini} from "../Components/RctLtAtmpsMini";
-import {NavigationSideBar} from "../Components/NavigationSideBar";
-import "./Home.css"
+import React, { useState, useEffect } from "react";
+import { RctLtAtmpsMini } from "../components/home-components/RctLtAtmpsMini";
+import "./Home.css";
 
-import {getAllLoggedLeetCodes} from "../RctLtAttmptsMOCKdata";
-import {Link} from "react-router-dom";
-
-const leetcodeData = getAllLoggedLeetCodes();
-console.log(leetcodeData); //just for debugging
+import { getAllLoggedLeetCodes } from "../components/home-components/RctLtAttmptsMOCKdata";
+import { Link } from "react-router-dom";
 
 function Home() {
+    const [leetcodeData, setLeetcodeData] = useState([]); // State to hold attempts data
+    const [loading, setLoading] = useState(true); // State to track loading
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const data = await getAllLoggedLeetCodes();
+                setLeetcodeData(data.slice(0, 5)); // Limit to 5 attempts
+            } catch (error) {
+                console.error("Error fetching leetcode data:", error);
+            } finally {
+                setLoading(false); // Stop loading
+            }
+        }
+
+        fetchData();
+    }, []); // Empty dependency array to run this effect only once
+
+    if (loading) {
+        return <div>Loading...</div>; // Optional loading indicator
+    }
+
     return (
         <div className="Home">
-            <NavigationSideBar/>
             <div className={"allContainers"}>
-                <h1 className={"sectionHeadersHome"}>Recent LeetCode Attempts</h1>
+                <h1 className={"sectionHeadersHome"}>Recent Additions</h1>
                 <div className={"recentLeetcodeAttemptsSectionBox"}>
-                    <br/>
+                    <br />
                     <div className={"homelayout"}>
-                        {
-                            leetcodeData.map(miniltAtp => {
-                                return (<RctLtAtmpsMini atmptData={miniltAtp}/>);
-                            })
-                        }
+                        {leetcodeData.map((miniltAtp, index) => (
+                            <RctLtAtmpsMini key={index} atmptData={miniltAtp} />
+                        ))}
                     </div>
                     <div className={"recentLeetcodeAttemptsSectionBox buttonBox"}>
-                        <br/>
-                        <Link to="/log-problem" className={"addNewLogButton"}> Add New Log</Link>
-                        <Link to="/view-logs" className={"seeAllLogsButton"}>See All Logs</Link>
-                        <br/>
-                        <br/>
-                        <br/>
+                        <br />
+                        <Link to="/log-prob" className={"addNewLogButton"}>
+                            Add New Log
+                        </Link>
+                        <Link to="/view-logs" className={"seeAllLogsButton"}>
+                            See All Logs
+                        </Link>
+                        <br />
+                        <br />
+                        <br />
                     </div>
                 </div>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <div className={"layoutForBottomHalfOfHome"}>
                     <div className={"grow2Home homeStats"}>
                         <div className={"layoutForStatsAndReminders"}>
@@ -69,4 +89,4 @@ function Home() {
     );
 }
 
-export {Home}
+export { Home };

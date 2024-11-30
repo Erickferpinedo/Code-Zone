@@ -1,7 +1,7 @@
 .homelayout {
     width: 100%;
     gap: 16px;
-    overflow: hidden;
+    overflow-x: auto;
     display: -webkit-box;
     -webkit-box-orient: horizontal;
 }

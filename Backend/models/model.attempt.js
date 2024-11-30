@@ -22,11 +22,6 @@ const AttemptsSchema = new mongoose.Schema({
     required: true,
   },
 
-  attemptCount: {
-    type: Number,
-    default: 1, // track how many attempts made | set at 1 when attempt is created
-  },
-
   difficulty: {
     type: String,
     enum: ["easy", "medium", "hard"],
