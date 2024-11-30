@@ -12,16 +12,16 @@ agenda.define("send-email", async (job) => {
     subject: subject,
     text: message,
     html: `<h1>Code Zone Reminder</h1>
-        <h3>${message}</h3>
-        <a href="#">To Problem</a>
+           <h3>${message}</h3>
+           <a href="#">To Problem</a>
         `,
   });
   console.log(`Email sent to ${email}`);
 });
 
 agenda.on("complete", async (job) => {
-    await job.remove();
-    console.log(`Job ${job.attrs._id} removed from the database.`);
+  await job.remove();
+  console.log(`Job ${job.attrs._id} removed from the database.`);
 });
 agenda.start();
 export default agenda;

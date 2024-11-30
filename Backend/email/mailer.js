@@ -6,7 +6,7 @@ const clientId = process.env.GMAIL_CLIENT_ID;
 const clientSecret = process.env.GMAIL_CLIENT_SECRET;
 const redirectUri = process.env.GMAIL_REDIRECT_URI || "https://developers.google.com/oauthplayground";
 const refreshToken = process.env.GMAIL_REFRESH_TOKEN;
-const senderEmail = "codezoneemail@gmail.com"; 
+const senderEmail = "codezonemail@gmail.com"; 
 
 // Initialize OAuth2 client
 const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
