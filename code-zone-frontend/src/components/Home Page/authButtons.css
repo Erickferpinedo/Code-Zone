@@ -1,0 +1,35 @@
+/* AuthButtons */
+.AuthButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .signInButton, .signUpButton {
+    padding: 10px 20px;
+    margin: 5px 0;  /* Reduced space between buttons */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Added transition for smooth animation */
+  }
+  
+  .signInButton {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .signUpButton {
+    background-color: #008CBA;
+    color: white;
+  }
+  
+  /* Hover effect */
+  .signInButton:hover, .signUpButton:hover {
+    transform: scale(1.1); /* Slightly enlarges the button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow when hovered */
+  }

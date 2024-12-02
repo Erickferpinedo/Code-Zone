@@ -1,0 +1,35 @@
+/* Footer Styles */
+.Footer {
+    background-color: #477DAC; /* Blue-ish background */
+    color: white;              /* White text */
+    text-align: center;        /* Centered text */
+    width: 100%;               /* Full width */
+    padding: 20px 0;           /* Padding for spacing */
+    box-sizing: border-box;    /* Ensures padding does not affect overall width */
+}
+
+.Footer p {
+    margin: 5px 0;             /* Adds space between the two paragraphs */
+    font-size: 16px;           /* Default font size */
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .Footer {
+        padding: 15px 0;       /* Reduce padding on smaller screens */
+    }
+
+    .Footer p {
+        font-size: 14px;       /* Slightly smaller font size for mobile screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .Footer {
+        padding: 10px 0;       /* Reduce padding further for very small screens */
+    }
+
+    .Footer p {
+        font-size: 12px;       /* Even smaller font size for very small screens */
+    }
+}

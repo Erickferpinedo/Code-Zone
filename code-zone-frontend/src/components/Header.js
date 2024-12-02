@@ -69,15 +69,16 @@ const Header = ({ toggleSidebar, userIconUrl }) => {
       >
         <div className="popover-content">
           {/* Retry Reminder */}
+          <h2 className="RetryTitle"> Retry Reminder </h2>
           <Typography variant="h6">{retryReminder.title}</Typography>
-          <Typography variant="body2">{retryReminder.description}</Typography>
+          {/* <Typography variant="h2">{Retry Reminder}</Typography> */}
           <Typography variant="body2">Last Tested: {retryReminder.lastTested}</Typography>
 
           {/* Notifications */}
-          <Typography variant="h6">Recent Notifications:</Typography>
+          <h2 className="Notifications Title">Recent Notifications</h2>
           {notifications.map((notif, index) => (
             <div key={index} className="notification">
-              <strong>{notif.title}</strong>
+              <strong className="notificationSubTitle">{notif.title}</strong>
               <p>{notif.message}</p>
             </div>
           ))}

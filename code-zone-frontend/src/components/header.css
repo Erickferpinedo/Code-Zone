@@ -53,4 +53,17 @@
   .notification {
     margin-bottom: 10px;
   }
-  
+
+  .popover-content h2{
+    font-weight: bold;
+    color: #6a9caf;
+  }
+
+  .popover-content h6{
+    color: #7bb4cb;
+    font-weight: bold;
+  }
+
+ .notificationSubTitle{
+    color: #7bb4cb;
+ }

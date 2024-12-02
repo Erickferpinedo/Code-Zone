@@ -8,7 +8,6 @@ function Sign_in_page() {
 
     return (
         <div className="Sign_in_page">
-            
             <Sign_in_form/>
         </div>
     );
