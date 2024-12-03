@@ -1,35 +1,43 @@
-/* Footer Styles */
 .Footer {
-    background-color: #477DAC; /* Blue-ish background */
-    color: white;              /* White text */
-    text-align: center;        /* Centered text */
-    width: 100%;               /* Full width */
-    padding: 20px 0;           /* Padding for spacing */
-    box-sizing: border-box;    /* Ensures padding does not affect overall width */
+    background-color: #477DAC;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
 }
 
 .Footer p {
-    margin: 5px 0;             /* Adds space between the two paragraphs */
-    font-size: 16px;           /* Default font size */
+    margin: 5px 0;
+    font-size: 16px;
 }
 
-/* Responsive Styles for Smaller Screens */
 @media (max-width: 768px) {
     .Footer {
-        padding: 15px 0;       /* Reduce padding on smaller screens */
+        padding: 15px 0;
     }
 
     .Footer p {
-        font-size: 14px;       /* Slightly smaller font size for mobile screens */
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     .Footer {
-        padding: 10px 0;       /* Reduce padding further for very small screens */
+        padding: 10px 0;
     }
 
     .Footer p {
-        font-size: 12px;       /* Even smaller font size for very small screens */
+        font-size: 12px;
     }
+}
+
+.quote {
+    text-align: center;
+    padding: 10px;
+    background-color: #477DAC;
+    color: white;
+    font-size: 10px;
+    font-style: italic;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

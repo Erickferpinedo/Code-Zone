@@ -16,12 +16,6 @@ function Main_page() {
         <div className="HomeHeader">
         <div className="TextContainer">
           <HeaderComponent />
-          <AuthButtons />
-        </div>
-       
-        <div className="HeaderImages">
-          <img className="headerImage" src={require("code-zone-frontend/public/Images/StatsImage.png")} alt="DSA Image" />
-          <img className="headerImage2" src={require("code-zone-frontend/public/Images/RecentAttempts.png")} alt="Recent Attempts Image" />
         </div>
         </div>
 

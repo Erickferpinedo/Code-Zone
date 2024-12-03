@@ -6,6 +6,7 @@ import LOG_PROB_PAGE from "../pages/Log_prob_page";
 import Log_view_page from "../pages/Log_view_page";
 import Setting_page from "../pages/Setting_Page";
 import NotificationPage from "../pages/Notification_page";
+import Sign_up_page from "../pages/Sign_up_page";
 import { getUserData } from "../apiServices/userService";
 
 function Layout() {
@@ -46,6 +47,7 @@ function Layout() {
         <Route path="/view-logs" element={<Log_view_page />} />
         <Route path="/settings" element={<Setting_page />} />
         <Route path="/notifications" element={<NotificationPage />} />
+        <Route path="/sign-up" element={<Sign_up_page />} />
       </Routes>
     </>
   );

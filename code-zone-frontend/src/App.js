@@ -17,12 +17,6 @@ function App() {
                 {/* Define the routes here! */}
                 <Route path='/' element={<Main_page />} />
                 <Route path="/signin" element={<Sign_in_page />} />
-                
-                {/* Sign in information */}
-                {/* <Route path="/" element={<Sign_in_page />} /> */}
-                {/* <Route path="/sign-up" element={<Sign_up_page />} /> */}
-                
-                {/* Wrap other routes inside the Layout component */}
                 <Route path="/*" element={<Layout />} />
                 
             </Routes>

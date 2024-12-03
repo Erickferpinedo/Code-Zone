@@ -5,8 +5,8 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 125px;
-  flex-wrap: wrap; /* Allows content to stack on smaller screens */
-  gap: 20px;       /* Adds space between items when stacked */
+  flex-wrap: wrap; 
+  gap: 20px;       
 }
 
 /* Common Text Content Styles */
@@ -18,14 +18,14 @@
   border-radius: 8px;
   margin: 20px;
   text-align: center;
-  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
-  max-width: 600px; /* Restricts text content width */
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1); 
+  max-width: 600px; 
   width: 100%;
 }
 
 /* Ensure text alignment adapts */
 .text-contentLSR, .text-contentOCC {
-  align-items: center; /* Center-align on smaller screens */
+  align-items: center; 
   text-align: center;
 }
 
@@ -34,87 +34,77 @@
   text-align: center;
 }
 
-/* Headings Styles */
 .LSR h2, .PLS h2, .OCC h2 {
   color: #349df9;
   font-weight: bold;
-  font-size: 2rem;  /* Responsive base size */
+  font-size: 24px;  
 }
 
 /* Paragraph Styles */
 .LSR p, .PLS p, .OCC p {
   color: #303030;
   line-height: 1.5;
-  font-size: 1rem;  /* Use rem for scalability */
-  width: 90%;       /* Adjust width for better readability on small screens */
+  font-size: 16px;  
+  width: 90%;       
 }
 
 /* Image Styles */
 .BrainDesign, .Books, .Puzzle {
-  width: 100%;       /* Full width on smaller screens */
-  max-width: 450px;  /* Limit max width */
-  margin: 20px 0;    /* Add spacing between images and text */
+  width: 100%;       
+  max-width: 450px;  
+  margin: 20px 0;    
   animation: float 5s ease-in-out infinite;
 }
 
 /* Floating Animation */
 @keyframes float {
   0% {
-    transform: translateY(0); /* Start at the original position */
+    transform: translateY(0); 
   }
   50% {
-    transform: translateY(-10px); /* Move up */
+    transform: translateY(-10px); 
   }
   100% {
-    transform: translateY(0); /* Return to original position */
+    transform: translateY(0); 
   }
 }
 
-/* Media Query for Small Screens */
+/* No need for media query adjustments for small screens */
 @media (max-width: 768px) {
   .LSR, .PLS, .OCC {
-    flex-direction: column;  /* Stack elements vertically */
-    margin-top: 60px;        /* Reduce top margin */
+    flex-direction: row; 
+    margin-top: 125px;    
   }
 
   .text-contentLSR, .text-contentPLS, .text-contentOCC {
-    padding: 15px;           /* Reduce padding */
-    margin: 10px;            /* Adjust margins */
+    padding: 20px; 
+    margin: 20px;  
   }
 
   .LSR h2, .PLS h2, .OCC h2 {
-    font-size: 1.5rem;       /* Smaller heading font size */
+    font-size: 24px;  
   }
 
   .LSR p, .PLS p, .OCC p {
-    font-size: 0.9rem;       /* Smaller paragraph font size */
+    font-size: 16px;  
   }
 }
 
-/* Media Query for Very Small Screens */
 @media (max-width: 480px) {
   .LSR, .PLS, .OCC {
-    margin-top: 40px;
+    margin-top: 125px; 
   }
 
   .text-contentLSR, .text-contentPLS, .text-contentOCC {
-    padding: 10px;
+    padding: 20px; 
   }
 
   .LSR h2, .PLS h2, .OCC h2 {
-    font-size: 1.2rem;
+    font-size: 24px; 
   }
 
   .LSR p, .PLS p, .OCC p {
-    font-size: 0.8rem;
+    font-size: 16px;  
   }
 }
 
-/* Quote Styles */
-.quote {
-  text-align: center;
-  padding: 30px;
-  background: radial-gradient(circle, #6BA9D6, #477DAC);
-  color: white;
-  font-size: 1.2rem;  /* Responsive font size */
-}

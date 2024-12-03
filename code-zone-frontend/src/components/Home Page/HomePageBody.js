@@ -32,11 +32,6 @@ const HomePageBody = () => {
                 <img src={require("code-zone-frontend/public/Images/OCCImage.png")} className="Puzzle" alt="Home Page Icon" />
             </div>
 
-            <div className="quote">
-                <h1>"Without Data Structures, Your Code is Like a Library Without Books."</h1>
-                <h2>-Anonymous</h2>
-            </div>
-
             {/* Xarrow with anchor to top */}
             <Xarrow start="textLSR" end="textPLS" startAnchor="bottom" endAnchor="top" color="#477DAC" strokeWidth={5} />
             <Xarrow start="textPLS" end="textOCC" startAnchor="bottom" endAnchor="top" color="#477DAC" strokeWidth={5} />
