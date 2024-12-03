@@ -1,6 +1,7 @@
   /* General container for the notification page */
   .notification-page {
     padding: 20px;
+    flex: auto;
   }
 
   /* Retry Reminder Box */
@@ -9,7 +10,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
 }
 
 .retry-container {
@@ -100,7 +100,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 27vh;
   }
 
   .notification-container {

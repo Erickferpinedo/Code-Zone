@@ -3,12 +3,15 @@ import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./sidebar-components/Sidebar.js";
-import LOG_PROB_PAGE from "../Pages/Log_prob_page.js";
-import Log_view_page from "../Pages/Log_view_page.js";
-import Setting_page from "../Pages/Setting_Page.js";
-import { Home } from "../Pages/Home.js";
-import NotificationPage from "../Pages/Notification_page.js";
+import LOG_PROB_PAGE from "../pages/Log_prob_page.js";
+import Log_view_page from "../pages/Log_view_page.js";
+import Setting_page from "../pages/Setting_Page.js";
+import { Home } from "../pages/Home.js";
+import NotificationPage from "../pages/Notification_page.js";
 import { getUserData } from "../apiServices/userService.js";
+import Sign_up_page from "../pages/Sign_up_page.js";
+
+
 
 function Layout() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -49,6 +52,7 @@ function Layout() {
         <Route path="/view-logs" element={<Log_view_page />} />
         <Route path="/settings" element={<Setting_page />} />
         <Route path="/notifications" element={<NotificationPage />} />
+        <Route path="/sign-up" element={<Sign_up_page />} />
       </Routes>
     </>
   );
