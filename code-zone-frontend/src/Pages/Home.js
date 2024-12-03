@@ -13,7 +13,7 @@ function Home() {
     async function fetchData() {
       try {
         const data = await getAllLoggedLeetCodes();
-        setLeetcodeData(data.slice(0, 5)); // Limit to 5 attempts
+        setLeetcodeData(data);
       } catch (error) {
         console.error("Error fetching leetcode data:", error);
       } finally {
@@ -82,6 +82,9 @@ function Home() {
               </div>
               <div className={"mainForStatsAndReminders"}>
                 <p>main chunk</p>
+                <p>reminders here. create reminders component</p>
+                <p>reminders here. create reminders component</p>
+                <p>reminders here. create reminders component</p>
                 <p>reminders here. create reminders component</p>
               </div>
               <div className={"footerForStatsAndReminders"}>
