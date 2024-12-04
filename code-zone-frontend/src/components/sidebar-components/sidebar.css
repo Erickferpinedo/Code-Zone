@@ -20,11 +20,13 @@
   transform: translateX(0);
 }
 
-.sidebar h2 {
+#sideHead {
   text-align: center;
   color: #477DAC; 
   margin-bottom: 20px;
   font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar ul {

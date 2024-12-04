@@ -32,7 +32,7 @@ function ProblemList({ problems, onDelete }) {
         <ProblemHeader />
         <AnimatePresence>
           {sortedProblems.map((problem) => (
-            <ProblemRow
+            <ProblemRow 
               key={problem.questionName}
               problem={problem}
               toggleStar={toggleStar}

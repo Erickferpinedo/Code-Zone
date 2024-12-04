@@ -34,7 +34,7 @@ export const getAttempt = async (questionName) => {
 export const getAttempts = async () => {
   try {
     const response = await api.get("/attempt/all");
-    console.log("All attempts received:", response.data);
+    console.log("All attempts received:", await response.data);
     return await response.data.reverse();
   } catch (error) {
     console.error(

@@ -2,6 +2,7 @@
 import React from "react";
 import "./next_button.css";
 import { createAttempt } from "../../apiServices/attemptService";
+import { sendEmail } from "../../apiServices/emailService";
 
 const Next_Button = ({
   selectedFace,
@@ -10,12 +11,14 @@ const Next_Button = ({
   nextReminderDate,
   inputQuestionName,
   inputQuestionDescription,
+  notes,
   setSelectedFace,
   setSelectedQuestionType,
   setNextReminderDate,
   setLastAttemptDate,
   setQuestionDescription,
   setQuestionName,
+  setNotes,
 }) => {
   const handleSubmit = async () => {
     try {
@@ -24,7 +27,7 @@ const Next_Button = ({
         selectedQuestionType === "Select Type" ||
         !lastAttemptDate ||
         !selectedFace ||
-        !inputQuestionName
+        !inputQuestionName.trim()
       ) {
         alert("Please fill all required fields!");
         return;
@@ -44,16 +47,28 @@ const Next_Button = ({
         nextReminder: nextReminderDate ? nextReminderDate.toISOString() : null,
         questionName: inputQuestionName,
         questionDescription: inputQuestionDescription,
+        note: notes,
       };
+
+      const reminderInfo = {
+        message: notes,
+        subject: inputQuestionName,
+        scheduledTime: nextReminderDate,
+      }
 
       //testing
       console.log("Attempt Data:", attemptData);
+      console.log("reminder")
 
       // send the attempt data to the backend
       const response = await createAttempt(attemptData);
+      // create a scheduled email
+      const email = await sendEmail(reminderInfo);
 
       //testing
       console.log("Attempt saved:", response);
+      console.log("Reminder Scheduled:", email);
+      
       alert("Attempt saved successfully!");
 
       //clear fields
@@ -63,6 +78,7 @@ const Next_Button = ({
       setNextReminderDate(null);
       setQuestionDescription("");
       setQuestionName("");
+      setNotes("")
     } catch (error) {
       // differentiate the errors for debugging
       if (error.response) {
@@ -82,6 +98,7 @@ const Next_Button = ({
     setNextReminderDate(null);
     setQuestionDescription("");
     setQuestionName("");
+    setNotes("");
   };
 
   return (

@@ -5,7 +5,7 @@ import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { truncateText } from "./helpers";
-import "./problem-List.css"; // Import CSS
+import "./problem-List.css";
 
 const ProblemRow = ({ problem, toggleStar, onDelete }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -34,7 +34,8 @@ const ProblemRow = ({ problem, toggleStar, onDelete }) => {
   };
 
   return (
-    <motion.tr
+    <motion.tr 
+      className="problem-row"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}

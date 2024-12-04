@@ -28,7 +28,7 @@ function RctLtAtmpsMini({ atmptData }) {
         </div>
       </section>
       <h3>Notes</h3>
-      <p>{atmptData.notes || "No Notes Provided"}</p>
+      <p>{atmptData.note || "No Notes Provided"}</p>
     </div>
   );
 }

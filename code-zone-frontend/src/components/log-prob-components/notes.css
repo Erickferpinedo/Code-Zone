@@ -64,5 +64,9 @@
   outline: none; 
   padding: 5px; 
   min-height: 20px;
-  border: none; 
+  border: 1px transparent; 
+  height: 400px;
+  border-radius: 10px;
+  background-color: #ecf2f6;
+  overflow-y: auto;
 }

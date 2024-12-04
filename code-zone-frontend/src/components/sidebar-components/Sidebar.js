@@ -61,7 +61,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
 
   return (
     <div ref={sidebarRef} className={`sidebar ${isOpen ? "open" : ""}`}>
-      <h2>Code Zone</h2>
+      <div id="sideHead"><h2 >Code Zone</h2></div>
       <ul>
         <li onClick={handleHome}>
           <HomeIcon /> <span>Home</span>

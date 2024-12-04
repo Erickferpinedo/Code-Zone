@@ -1,31 +1,32 @@
-import React, { useState } from 'react';
-import Notification from '../components/notification-components/Notification'; // Adjust path as needed
-import RetryReminder from '../components/notification-components/RetryReminder';
-import './notification_page.css';
+import React, { useState, useEffect } from "react";
+import Notification from "../components/notification-components/Notification"; // Adjust path as needed
+import RetryReminder from "../components/notification-components/RetryReminder";
+import "./notification_page.css";
+import { getEmails } from "../apiServices/emailService";
 
-const NotificationPage = () => {    
+const NotificationPage = () => {
   const [notifications] = useState([
-    { title: "New Message", message: "Place holder Place Holder Place Holder Place Holder." },
+    {
+      title: "New Message",
+      message: "Place holder Place Holder Place Holder Place Holder.",
+    },
     { title: "Update", message: "Your profile was updated successfully." },
   ]);
 
-  const [retryData] = useState([
-    {
-      title: 'Array',
-      description: 'Don’t forget to retry your unfinished task.',
-      lastTested: '2024-11-10' // Example: 10th Nov 2024 (older than 3 days)
-    },
-    {
-      title: 'Linked List',
-      description: 'Please retry the previous task for better results.',
-      lastTested: '2024-11-21' // Example: 21st Nov 2024 (within 3 days)
-    },
-    {
-      title: 'Tree',
-      description: 'It’s time to attempt this again.',
-      lastTested: '2024-11-05' // Example: 5th Nov 2024 (older than 3 days)
-    }
-  ]);
+  const [retryData, setRetryData] = useState([]);
+
+  useEffect(() => {
+    const fetchEmails = async () => {
+      try {
+        const emails = await getEmails(); // Fetch emails from API
+        setRetryData(emails); // Update the state with fetched emails
+      } catch (error) {
+        console.error("Error fetching emails:", error);
+      }
+    };
+
+    fetchEmails();
+  }, []); // Empty dependency array means this runs once when the component mounts
 
   return (
     <div className="notification-page">
@@ -34,14 +35,18 @@ const NotificationPage = () => {
         <div className="retry-container">
           <h2>Retry Reminders</h2>
           <div className="retry-reminder-list">
-            {retryData.map((reminder, index) => (
-              <RetryReminder
-                key={index}
-                title={reminder.title}
-                description={reminder.description}
-                lastTested={reminder.lastTested}
-              />
-            ))}
+            {retryData.length === 0 ? (
+              <h3>No Reminders Currently Set</h3>
+            ) : (
+              retryData.map((reminder, index) => (
+                <RetryReminder
+                  key={index}
+                  title={reminder.data.subject}
+                  description={reminder.data.message}
+                  lastTested={reminder.nextRunAt}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>
@@ -51,7 +56,11 @@ const NotificationPage = () => {
         <div className="notification-container">
           <h2>Notifications</h2>
           {notifications.map((notif, index) => (
-            <Notification key={index} title={notif.title} message={notif.message} />
+            <Notification
+              key={index}
+              title={notif.title}
+              message={notif.message}
+            />
           ))}
         </div>
       </div>

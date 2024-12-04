@@ -15,6 +15,7 @@ function Log_prob_page() {
   const [nextReminderDate, setNextReminderDate] = useState(null);
   const [questionName, setQuestionName] = useState(null);
   const [questionDescription, setQuestionDescription] = useState(null);
+  const [notes, setNotes] = useState("");
 
   return (
     <>
@@ -36,7 +37,10 @@ function Log_prob_page() {
             nextReminderDate={nextReminderDate}
             setNextReminderDate={setNextReminderDate}
           />
-          <Notes />
+          <Notes 
+          setNotes={setNotes}
+          notes={notes}
+          />
         </div>
         <Next_Button
           inputQuestionDescription={questionDescription}
@@ -45,12 +49,14 @@ function Log_prob_page() {
           selectedQuestionType={selectedQuestionType}
           lastAttemptDate={lastAttemptDate}
           nextReminderDate={nextReminderDate}
+          notes={notes}
           setSelectedFace={setSelectedFace}
           setSelectedQuestionType={setSelectedQuestionType}
           setNextReminderDate={setNextReminderDate}
           setLastAttemptDate={setLastAttemptDate}
           setQuestionDescription={setQuestionDescription}
           setQuestionName={setQuestionName}
+          setNotes={setNotes}
         />
       </div>
     </>

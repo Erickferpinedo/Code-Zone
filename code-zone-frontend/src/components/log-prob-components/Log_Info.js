@@ -194,7 +194,7 @@ const Log_Info = ({
       placeholderText="Select a date and time"
       showTimeSelect
       timeFormat="h:mm aa"
-      timeIntervals={15}
+      timeIntervals={5}
       className="date-picker"
     />
   </div>
@@ -212,9 +212,10 @@ const Log_Info = ({
             placeholderText="Select a date and time"
             showTimeSelect
             timeFormat="h:mm aa"
-            timeIntervals={15}
+            timeIntervals={5}
             className="date-picker"
           />
+          <div className="next-reminder-optional">(Optional)</div>
         </div>
       </div>
     </div>

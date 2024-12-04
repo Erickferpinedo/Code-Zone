@@ -14,15 +14,14 @@ export const createAttempt = async (req, res) => {
       attemptData,
       { upsert: true, new: true }
     );
-
     res.status(200).json(attempt);
+
   } catch (error) {
     if (error.code === 11000) {
       return res.status(400).json({ message: "Duplicate attempt detected" });
     }
-
+    
     res.status(500).json({ message: error.message });
-
     console.error("Error creating attempt:", error);
     res.status(500).json({ message: error.message });
   }
