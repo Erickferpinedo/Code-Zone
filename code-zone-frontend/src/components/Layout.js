@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Header from "./Header";
+import Header from "./Header.js";
 import Sidebar from "./sidebar-components/Sidebar.js";
 import LOG_PROB_PAGE from "../pages/Log_prob_page.js";
 import Log_view_page from "../pages/Log_view_page.js";
@@ -10,6 +10,7 @@ import { Home } from "../pages/Home.js";
 import NotificationPage from "../pages/Notification_page.js";
 import { getUserData } from "../apiServices/userService.js";
 import Sign_up_page from "../pages/Sign_up_page.js";
+import About from "../pages/About.js";
 
 
 
@@ -53,6 +54,7 @@ function Layout() {
         <Route path="/settings" element={<Setting_page />} />
         <Route path="/notifications" element={<NotificationPage />} />
         <Route path="/sign-up" element={<Sign_up_page />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );

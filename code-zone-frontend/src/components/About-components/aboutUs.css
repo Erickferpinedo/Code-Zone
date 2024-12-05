@@ -1,0 +1,48 @@
+.About { 
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-height: 80vh;
+    padding: 2vw;
+    align-items: center;
+}
+
+.AboutUs, .OurPurpose {
+    margin-bottom: 2vw; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.AboutUs h1, .OurPurpose h1{
+    color: #349df9; 
+    text-align: center;
+    font-weight: bold;
+}
+
+.AboutUs p, .OurPurpose p{
+    font-size: 1.5vw;
+    line-height: 2;
+    padding: 0 5vw;
+}
+
+.Images {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 20px; 
+    width: 100%;
+    margin-top: 2vw;
+  }
+  
+  .INITBUILD, .INITFIU {
+    width: 500px; 
+    height: auto;
+}

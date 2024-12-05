@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ProfilePictureUploader from '../components/Settings Page/ProfilePictureUploader';
+import UsernameEditor from '../components/Settings Page/UsernameEditor';
 
-function Setting_Page() {
-    // const problems = [
-    //     { title: 'Problem 1', description: 'Description of problem 1' },
-    //     { title: 'Problem 2', description: 'Description of problem 2' },
-    //     { title: 'Problem 3', description: 'Description of problem 3' },
-    //     // Make sure problems are changed to a fetch function that will display detials about the problems
-    // ];
+const Settings = () => {
+  const [profilePicture, setProfilePicture] = useState('');
+  const [username, setUsername] = useState('DefaultUser');
 
-    return (
-        <div>
-            settings
-        </div>
-    );
-}
+  return (
+    <div>
+      <h2>Profile Settings</h2>
+      <ProfilePictureUploader profilePicture={profilePicture} setProfilePicture={setProfilePicture} />
+      <UsernameEditor username={username} setUsername={setUsername} />
+    </div>
+  );
+};
 
-export default Setting_Page;
+export default Settings;

@@ -75,9 +75,6 @@ function Sidebar({ isOpen, toggleSidebar }) {
         <li onClick={handleNotifications}>
           <NotificationsIcon /> <span>Notifications</span>
         </li>
-        <li>
-          <InfoIcon /> <span>About Us</span>
-        </li>
       </ul>
       <ul className="sidebar-footer">
         <li onClick ={handleSettings}>

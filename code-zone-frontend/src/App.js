@@ -6,14 +6,16 @@ import Sign_up_page from "./pages/Sign_up_page.js";
 import Layout from "./components/Layout.js";
 import Main_page from "./pages/Main_page.js";
 import Sign_in_page from "./pages/Sign_in_page.js";
+import About from "./pages/About.js";
 
 function App() {
   return (
     <Router>
       <Routes>
         {/* Define the routes here! */}
-        <Route path="/signin" element={<Sign_in_page />} />
         <Route path="/" element={<Main_page />} />
+        <Route path="/signin" element={<Sign_in_page />} />
+        <Route path="/about" element={<About />} />
         <Route path="/sign-up" element={<Sign_up_page />} />
 
         {/* Wrap other routes inside the Layout component */}

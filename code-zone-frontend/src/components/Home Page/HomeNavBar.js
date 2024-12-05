@@ -29,7 +29,13 @@ export default function HomeNavBar() {
 
   return (
     <header className="Header">
-      <img src={require("code-zone-frontend/public/Images/Code.png")} className="Logo" alt="logo" />
+      <img 
+        src="/Images/homenavbarimg.png" 
+        className="Logo" 
+        alt="logo" 
+        onClick={() => navigate('/')} // Navigate when the image is clicked
+        style={{cursor: 'pointer'}} // Optional: add a cursor pointer to indicate it's clickable
+      />
       <CSSTransition
         in={!isSmallScreen || isNavVisible}
         timeout={350}
@@ -38,7 +44,7 @@ export default function HomeNavBar() {
       >
         <nav className="Nav">
           
-          <a href="/">About</a>
+          <button onClick={() => navigate ('/about')}>About</button>
           <button onClick={() => navigate('/signin')}>Sign In</button> {/* Navigate to sign-in page */}
         </nav>
       </CSSTransition>
