@@ -2,6 +2,7 @@ import express from "express";
 import connectDB from "./config/database.js";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
+import notificationsRoutes from "./routes/routes.notification.js";
 import authRoutes from "./routes/auth.routes.js";
 import attemptRouter from "./routes/attempt.routes.js";
 import configurePassport from "./config/passport.js";
@@ -41,6 +42,7 @@ app.use(passport.session());
 app.use("/attempt", attemptRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRoutes);
+app.use("/api/notifications", notificationsRoutes);
 
 // app.get("/", (req, res) => {
 //   res.send("Hello, MongoDB Atlas!");
