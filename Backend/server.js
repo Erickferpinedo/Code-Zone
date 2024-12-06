@@ -51,7 +51,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
-  console.log("Session:", req.session);
+  console.log("Session Data:", req.session);
+  console.log("Session Passport Data:", req.session?.passport);
   next();
 });
 // routes

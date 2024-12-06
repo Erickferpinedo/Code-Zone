@@ -15,13 +15,13 @@ export default function configurePassport() {
 
     passport.deserializeUser(async (id, done) => {
         try {
-          console.log("Deserializing user ID:", id);
+          console.log("Deserializing User ID:", id);
           const user = await User.findById(id);
-          console.log("Deserialized User:", user);
+          console.log("User found in deserialization:", user);
           done(null, user);
-        } catch (err) {
-          console.error("Error in deserializeUser:", err);
-          done(err, null);
+        } catch (error) {
+          console.error("Error in deserializing user:", error);
+          done(error, null);
         }
       });
       
