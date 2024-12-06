@@ -1,0 +1,37 @@
+.recentLeetcodeAttemptsSection {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .recentLeetcodeAttemptsSectionBox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .noProblems {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .addNewLogButton,
+  .seeAllLogsButton {
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 12px 15px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .addNewLogButton {
+    background-color: #477dac;
+  }
+  
+  .seeAllLogsButton {
+    background-color: #7eb8cf;
+  }
+  

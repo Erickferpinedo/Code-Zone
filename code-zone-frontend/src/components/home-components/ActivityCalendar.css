@@ -1,0 +1,36 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days in a week */
+    gap: 5px;
+    width: 100%; /* Take the full width of the parent container */
+    max-width: 280px; /* Restrict maximum width of the calendar itself */
+    margin: 0 auto; /* Center the calendar within the container */
+    padding: 10px; /* Add padding around the calendar */
+    background-color: #ffffff; /* Optional: Add a subtle background */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  }
+  
+  
+  .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px; /* Adjusted size */
+    height: 35px; /* Adjusted size */
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    font-size: 12px; /* Adjust font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .day.active {
+    background-color: #3b82f6; /* Active state color */
+    color: white;
+  }
+  
+  .day:hover {
+    background-color: #93c5fd; /* Hover effect */
+  }
+  

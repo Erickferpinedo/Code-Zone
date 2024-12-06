@@ -10,8 +10,7 @@ import { Home } from "../pages/Home.js";
 import NotificationPage from "../pages/Notification_page.js";
 import { getUserData } from "../apiServices/userService.js";
 import Sign_up_page from "../pages/Sign_up_page.js";
-
-
+import AboutUs from "../pages/AboutUs.js"; // Import the About Us page
 
 function Layout() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -25,7 +24,7 @@ function Layout() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const data = await getUserData(); // call the backend api
+        const data = await getUserData(); // call the backend API
         setUserIcon(data.profileImage); // sets it for use state
       } catch (err) {
         console.error("Error fetching user data:", err);
@@ -53,6 +52,7 @@ function Layout() {
         <Route path="/settings" element={<Setting_page />} />
         <Route path="/notifications" element={<NotificationPage />} />
         <Route path="/sign-up" element={<Sign_up_page />} />
+        <Route path="/about-us" element={<AboutUs />} /> {/* Add the About Us route */}
       </Routes>
     </>
   );

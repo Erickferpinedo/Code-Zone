@@ -1,0 +1,56 @@
+/* Section container */
+.upcomingRemindersSection {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  /* Header styling */
+  .headerForStatsAndReminders {
+    margin-bottom: 16px;
+  }
+  
+  .sectionHeadersHome {
+    font-size: 20px;
+    color: #477dac;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Grid layout for reminders */
+  .remindersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+  }
+  
+  /* Individual reminder card */
+  .reminderCard {
+    background-color: #ecf2f7;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Hover effect for cards */
+  .reminderCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* No reminders message */
+  .noRemindersMessage {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+  }
+  
