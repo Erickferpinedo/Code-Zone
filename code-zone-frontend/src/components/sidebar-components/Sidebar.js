@@ -1,4 +1,3 @@
-// Sidebar.js
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./sidebar.css";
@@ -36,32 +35,42 @@ function Sidebar({ isOpen, toggleSidebar }) {
     toggleSidebar();
     window.location.href = "http://localhost:5001/auth/logout";
   };
+
   const handleSettings = () => {
     toggleSidebar();
     navigate("/settings");
-  }
+  };
 
   const handleViewLogs = () => {
     toggleSidebar();
     navigate("/view-logs");
   };
+
   const handleLogProb = () => {
     toggleSidebar();
     navigate("/log-prob");
   };
+
   const handleHome = () => {
     toggleSidebar();
     navigate("/home");
-  }
+  };
 
   const handleNotifications = () => {
     toggleSidebar();
-    navigate("/notifications")
-  }
+    navigate("/notifications");
+  };
+
+  const handleAboutUs = () => {
+    toggleSidebar();
+    navigate("/about-us");
+  };
 
   return (
     <div ref={sidebarRef} className={`sidebar ${isOpen ? "open" : ""}`}>
-      <div id="sideHead"><h2 >Code Zone</h2></div>
+      <div id="sideHead">
+        <h2>Code Zone</h2>
+      </div>
       <ul>
         <li onClick={handleHome}>
           <HomeIcon /> <span>Home</span>
@@ -75,12 +84,12 @@ function Sidebar({ isOpen, toggleSidebar }) {
         <li onClick={handleNotifications}>
           <NotificationsIcon /> <span>Notifications</span>
         </li>
-        <li>
+        <li onClick={handleAboutUs}>
           <InfoIcon /> <span>About Us</span>
         </li>
       </ul>
       <ul className="sidebar-footer">
-        <li onClick ={handleSettings}>
+        <li onClick={handleSettings}>
           <SettingsIcon /> <span>Settings</span>
         </li>
         <li onClick={handleLogout}>
