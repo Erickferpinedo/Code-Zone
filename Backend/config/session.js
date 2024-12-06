@@ -22,10 +22,11 @@ export function configureSession(app) {
 
 // This will check if the user is authenticated
 export const isAuthenticated = (req, res, next) => {
+  console.log(req.user);
   if (req.isAuthenticated()) {
     return next();
   } else {
-    res.status(401).json({message: "Unauthorized"});
+    res.status(401).json({message: "Unauthorized backend"});
   }
 };
 

@@ -59,12 +59,4 @@ router.get("/logout", (req, res, next) => {
   });
 });
 
-router.get('/check', (req, res) => {
-  if (req.isAuthenticated()) {
-    res.json({ authenticated: true, user: req.user });
-  } else {
-    res.json({ authenticated: false });
-  }
-});
-
 export default router;
