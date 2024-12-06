@@ -20,7 +20,7 @@ router.get(
   "/github/callback",
   passport.authenticate("github", { failureRedirect: "/" }),
   (req, res) => {
-    res.redirect("http://localhost:3000/home");
+    res.redirect("https://code-z0ne.vercel.app/home");
   }
 );
 
@@ -30,7 +30,7 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/" }),
     (req, res) => {
     // Successful authentication
-    res.redirect("http://localhost:3000/home"); // Or redirect to desired route
+    res.redirect("https://code-z0ne.vercel.app/home"); // Or redirect to desired route
   }
 );
 
@@ -54,7 +54,7 @@ router.get("/logout", (req, res, next) => {
         console.error("Error destroying session: ", err);
       }
       res.clearCookie("connect.sid");
-      res.redirect("http://localhost:3000");
+      res.redirect("https://code-z0ne.vercel.app");
     });
   });
 });

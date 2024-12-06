@@ -16,12 +16,18 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 connectDB();
+app.set('trust proxy', 1); 
 
 app.use(express.json());
 
+const origins = [
+  "https://code-z0ne.vercel.app",
+  "localhost:3000"
+]
+
 app.use(
   cors({
-    origin: "https://code-z0ne.vercel.app",
+    origin: origins,
     credentials: true,
   })
 );
