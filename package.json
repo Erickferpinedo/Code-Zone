@@ -8,6 +8,7 @@
     "code-zone-frontend"
   ],
   "scripts": {
+    "start": "cd Backend && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"cd backend && nodemon server.js \" \"cd code-zone-frontend && npm run start\""
