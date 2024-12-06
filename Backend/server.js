@@ -20,21 +20,10 @@ connectDB();
 app.use(express.json());
 app.set('trust proxy', 1); 
 
-const allowedOrigins = [
-  "https://code-z0ne.vercel.app",
-  "http://localhost:3000",
-];
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+    origin: "https://code-z0ne.vercel.app", // Frontend origin
+    credentials: true, // Allow cookies in cross-origin requests
   })
 );
 
@@ -60,6 +49,13 @@ app.use("/attempt", attemptRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRoutes);
 app.use("/email", emailRouter);
+
+app.get("/debug-session", (req, res) => {
+  res.json({
+    cookies: req.cookies,
+    session: req.session,
+  });
+});
 
 app.get("/", (req, res) => {
   res.send(
