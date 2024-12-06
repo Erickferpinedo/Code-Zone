@@ -5,7 +5,7 @@ export function configureSession(app) {
   app.use(
     session({
       secret: process.env.EXPRESS_SESSION_ID,
-      resave: false,
+      resave: true,
       saveUninitialized: false,
       store: MongoStore.create({
         mongoUrl: process.env.DB_CONNECTION_STRING,
