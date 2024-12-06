@@ -27,7 +27,7 @@ router.get(
 // Google callback route
 router.get(
   "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }),
+  passport.authenticate("google", { failureRedirect: "/", keepSessionInfo: true }),
   (req, res) => {
     req.session.save((err) => {
       if (err) {
