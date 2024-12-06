@@ -25,6 +25,14 @@ const allowedOrigins = [
   "http://localhost:3000",
 ];
 
+app.use(
+  cors({
+    origin: allowedOrigins, // Restrict to allowed origins
+    credentials: true,      // Allow cookies and credentials
+  })
+);
+
+// Add this to handle preflight OPTIONS requests globally
 app.options('*', cors({
   origin: allowedOrigins,
   credentials: true,
