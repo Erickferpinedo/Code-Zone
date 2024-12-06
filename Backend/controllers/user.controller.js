@@ -11,25 +11,14 @@ export const createUser = async (req, res) => {
 
 export const getUser = async (req, res) => {
   try {
-    if (!req.isAuthenticated()){
-      return res.status(401).json({message: 'Unauthorized'});
-    }
-    const { id } = req.user;
-    const user = await User.findById(id);
-
-    if (!user) {
-      return res.status(404).json({message: 'User not found'});
+    if (!req.isAuthenticated()) {
+      return res.status(401).json({ message: "Unauthorized" });
     }
 
-    res.status(200).json({
-      username: user.username,
-      email: user.email,
-      profileImage: user.profileImage,
-    });
-
+    res.status(200).json(req.user);
   } catch (error) {
-    console.error('Error fetching user data', error);
-    res.status(500).json({ message: 'Intername server error on User' });
+    console.error("Error fetching user data", error);
+    res.status(500).json({ message: "Intername server error on User" });
   }
 };
 
@@ -44,10 +33,10 @@ export const getUsers = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   try {
-    const id = req.user.id;
- 
-    if (!req.body || Object.keys(req.body).length === 0){
-      return res.status(400).json({ message: 'No updates provided'})
+    const { id } = req.user;
+
+    if (!req.body || Object.keys(req.body).length === 0) {
+      return res.status(400).json({ message: "No updates provided" });
     }
     const updatedUser = await User.findByIdAndUpdate(id, req.body, {
       new: true,

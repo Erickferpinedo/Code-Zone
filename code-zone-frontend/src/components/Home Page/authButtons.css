@@ -1,0 +1,51 @@
+.AuthButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vw;
+}
+
+.signInButton, .signUpButton {
+  padding: 1vw 1.5vw;
+  margin: 0.5vw 0;
+  font-size: 2vw;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  width: 40vw;
+  max-width: 300px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.signInButton {
+  background-color: #4CAF50;
+  box-shadow: 0px 5px 0px 0px rgba(26, 24, 24, 0.25);
+  color: white;
+}
+
+.signUpButton {
+  background-color: #008CBA;
+  box-shadow: 0px 5px 0px 0px rgba(26, 24, 24, 0.25);
+  color: white;
+}
+
+.signInButton:hover, .signUpButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .signInButton, .signUpButton {
+    font-size: 3vw;
+    width: 45w;
+  }
+}
+
+@media (max-width: 480px) {
+  .signInButton, .signUpButton {
+    font-size: 10vw;
+    width: 60vw;
+    padding: 10vw;
+  }
+}

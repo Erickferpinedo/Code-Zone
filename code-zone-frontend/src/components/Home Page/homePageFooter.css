@@ -1,0 +1,43 @@
+.Footer {
+    background-color: #477DAC;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+.Footer p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .Footer {
+        padding: 15px 0;
+    }
+
+    .Footer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Footer {
+        padding: 10px 0;
+    }
+
+    .Footer p {
+        font-size: 12px;
+    }
+}
+
+.quote {
+    text-align: center;
+    padding: 10px;
+    background-color: #477DAC;
+    color: white;
+    font-size: 10px;
+    font-style: italic;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,110 @@
+/* Common Flexbox Layout */
+.LSR, .PLS, .OCC {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 125px;
+  flex-wrap: wrap; 
+  gap: 20px;       
+}
+
+/* Common Text Content Styles */
+.text-contentLSR, .text-contentPLS, .text-contentOCC {
+  display: flex;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.1); 
+  max-width: 600px; 
+  width: 100%;
+}
+
+/* Ensure text alignment adapts */
+.text-contentLSR, .text-contentOCC {
+  align-items: center; 
+  text-align: center;
+}
+
+.text-contentPLS {
+  align-items: center;
+  text-align: center;
+}
+
+.LSR h2, .PLS h2, .OCC h2 {
+  color: #349df9;
+  font-weight: bold;
+  font-size: 24px;  
+}
+
+/* Paragraph Styles */
+.LSR p, .PLS p, .OCC p {
+  color: #303030;
+  line-height: 1.5;
+  font-size: 16px;  
+  width: 90%;       
+}
+
+/* Image Styles */
+.BrainDesign, .Books, .Puzzle {
+  width: 100%;       
+  max-width: 450px;  
+  margin: 20px 0;    
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+/* No need for media query adjustments for small screens */
+@media (max-width: 768px) {
+  .LSR, .PLS, .OCC {
+    flex-direction: row; 
+    margin-top: 125px;    
+  }
+
+  .text-contentLSR, .text-contentPLS, .text-contentOCC {
+    padding: 20px; 
+    margin: 20px;  
+  }
+
+  .LSR h2, .PLS h2, .OCC h2 {
+    font-size: 24px;  
+  }
+
+  .LSR p, .PLS p, .OCC p {
+    font-size: 16px;  
+  }
+}
+
+@media (max-width: 480px) {
+  .LSR, .PLS, .OCC {
+    margin-top: 125px; 
+  }
+
+  .text-contentLSR, .text-contentPLS, .text-contentOCC {
+    padding: 20px; 
+  }
+
+  .LSR h2, .PLS h2, .OCC h2 {
+    font-size: 24px; 
+  }
+
+  .LSR p, .PLS p, .OCC p {
+    font-size: 16px;  
+  }
+}
+

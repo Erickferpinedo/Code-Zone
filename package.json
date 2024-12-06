@@ -2,6 +2,7 @@
   "name": "code-zone",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "workspaces": [
     "backend",
     "code-zone-frontend"
@@ -9,16 +10,37 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"cd backend && npm run server \" \"cd code-zone-frontend && npm run start\""
+    "dev": "concurrently \"cd backend && nodemon server.js \" \"cd code-zone-frontend && npm run start\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "concurrently": "^9.1.0"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^9.1.0",
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
-    "axios": "^1.7.7"
+    "agenda": "^5.0.0",
+    "axios": "^1.7.7",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "file-uri-to-path": "^2.0.0",
+    "framer-motion": "^11.12.0",
+    "googleapis": "^144.0.0",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.7.1",
+    "nodemailer": "^6.9.16",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "react-datepicker": "^7.5.0",
+    "react-xarrows": "^2.0.2"
   }
 }

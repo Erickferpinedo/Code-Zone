@@ -20,7 +20,7 @@ router.get(
   "/github/callback",
   passport.authenticate("github", { failureRedirect: "/" }),
   (req, res) => {
-    res.redirect("http://localhost:3000/log-prob");
+    res.redirect("http://localhost:3000/home");
   }
 );
 
@@ -30,7 +30,7 @@ router.get(
   passport.authenticate("google", { failureRedirect: "/" }),
     (req, res) => {
     // Successful authentication
-    res.redirect("http://localhost:3000/log-prob"); // Or redirect to desired route
+    res.redirect("http://localhost:3000/home"); // Or redirect to desired route
   }
 );
 
@@ -57,6 +57,14 @@ router.get("/logout", (req, res, next) => {
       res.redirect("http://localhost:3000");
     });
   });
+});
+
+router.get('/check', (req, res) => {
+  if (req.isAuthenticated()) {
+    res.json({ authenticated: true, user: req.user });
+  } else {
+    res.json({ authenticated: false });
+  }
 });
 
 export default router;
