@@ -10,7 +10,7 @@ import { isAuthenticated } from "../config/session.js";
 const router = express.Router();
 
 //only authenticated users can make these requests
-router.use(isAuthenticated);
+// router.use(isAuthenticated);
 
 router.post("/", createAttempt);
 
