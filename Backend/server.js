@@ -20,10 +20,29 @@ connectDB();
 app.use(express.json());
 app.set('trust proxy', 1); 
 
+const allowedOrigins = [
+  "https://code-z0ne.vercel.app",
+  "http://localhost:3000",
+];
+
 app.use(
   cors({
-    origin: "https://code-z0ne.vercel.app", // Frontend origin
-    credentials: true, // Allow cookies in cross-origin requests
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow cookies and credentials
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+      "Cookie",
+    ],
   })
 );
 
