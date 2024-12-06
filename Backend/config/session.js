@@ -13,7 +13,7 @@ export function configureSession(app) {
       }),
       cookie: {
         maxAge: 24 * 60 * 60 * 1000,
-        secure: false,
+        secure: process.env.NODE_ENV,
         httpOnly: true,
       },
     })

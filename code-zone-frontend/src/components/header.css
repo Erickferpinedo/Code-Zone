@@ -71,9 +71,4 @@
  #titleHead {
     padding: 0;
     margin: 0;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    box-sizing: border-box;
  }
