@@ -11,9 +11,6 @@ export const createUser = async (req, res) => {
 
 export const getUser = async (req, res) => {
   try {
-    if (!req.isAuthenticated()) {
-      return res.status(401).json({ message: "Unauthorized" });
-    }
 
     res.status(200).json(req.user);
   } catch (error) {
