@@ -12,11 +12,11 @@ export default function configureGoogleStrategy(passport) {
       },
       async (req, accessToken, refreshToken, profile, done) => {
         try {
-          console.log("Google Profile:", profile);
-
+          console.log("Google Profile:", profile); // Log profile details
+      
           const email = profile.emails?.[0]?.value;
           if (!email) throw new Error("No email address found in Google profile");
-
+      
           let user = await User.findOne({ "authProviders.google.id": profile.id });
           if (!user) {
             user = await User.create({
@@ -29,14 +29,15 @@ export default function configureGoogleStrategy(passport) {
               isEmailVerified: true,
             });
           }
-
-          console.log("User found or created:", user);
-          return done(null, user);
+      
+          console.log("User found or created:", user); // Log the user object
+          return done(null, user); // Pass the user object to serializeUser
         } catch (err) {
           console.error("Error in Google Strategy:", err);
           return done(err, null);
         }
       }
+      
     )
   );
 }

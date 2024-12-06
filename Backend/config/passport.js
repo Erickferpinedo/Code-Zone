@@ -10,7 +10,7 @@ export default function configurePassport() {
     // Serialize user
     passport.serializeUser((user, done) => {
         console.log("Serializing User ID:", user._id || user.id); // Log the ID
-        done(null, user._id || user.id); // Save user ID into the session
+        done(null, user._id.toString() || user.id); // Save user ID into the session
     });
 
     // Deserialize user
