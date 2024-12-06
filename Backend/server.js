@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRouter from "./routes/user.routes.js";
 import notificationsRoutes from "./routes/routes.notification.js";
 import authRoutes from "./routes/auth.routes.js";
+import emailRouter from "./routes/email.routes.js";
 import attemptRouter from "./routes/attempt.routes.js";
 import configurePassport from "./config/passport.js";
 import passport from "passport";
@@ -42,6 +43,7 @@ app.use(passport.session());
 app.use("/attempt", attemptRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRoutes);
+app.use("/email", emailRouter);
 app.use("/api/notifications", notificationsRoutes);
 
 
