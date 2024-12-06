@@ -10,6 +10,7 @@ export default function configurePassport() {
 
 
     passport.serializeUser((user, done) => {
+        console.log("Seralizing User ID:", user.id);
         done(null, user.id);
     });
 

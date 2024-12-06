@@ -29,6 +29,15 @@ router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
     (req, res) => {
+      req.session.save((err) => {
+        if (err) {
+          console.error("Session save error:", err);
+          res.status(500).json({ message: "Session save failed" });
+        } else {
+          res.redirect("https://code-z0ne.vercel.app/home");
+        }
+      })
+      console.log("User after google login:", req.user);
     // Successful authentication
     res.redirect("https://code-z0ne.vercel.app/home"); // Or redirect to desired route
   }
@@ -36,6 +45,8 @@ router.get(
 
 // checks if the user is verified 
 router.get("/session", (req, res) => {
+  console.log("Session:", req.session);
+  console.log("Authenticated User:", req.user);
   if (req.isAuthenticated()) {
     res.status(200).json({authenticated: true, user: req.user});
   } else {
