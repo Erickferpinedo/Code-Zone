@@ -16,18 +16,24 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 connectDB();
-app.set('trust proxy', 1); 
 
 app.use(express.json());
+app.set('trust proxy', 1); 
 
-const origins = [
+const allowedOrigins = [
   "https://code-z0ne.vercel.app",
-  "localhost:3000"
-]
+  "http://localhost:3000",
+];
 
 app.use(
   cors({
-    origin: origins,
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
@@ -44,6 +50,11 @@ app.use(passport.initialize());
 //Middleware that will restore login state from a session.
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  console.log("Session:", req.session);
+  console.log("User:", req.user);
+  next();
+});
 // routes
 app.use("/attempt", attemptRouter);
 app.use("/user", userRouter);
